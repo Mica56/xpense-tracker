@@ -1,13 +1,13 @@
 # xpense-tracker
 
-> A Vue.js project
+> A Cordova-Vuejs project that tracks and monitors user's expenses
 
 ## Build Setup
-
+### NOTE: Make sure you have installed [nodejs](https://nodejs.org/en), [Vue-CLI](https://cli.vuejs.org/guide/installation.html), Cordova (optional)
 ``` bash
 # install dependencies
+# ignore if there are errors, not sure if those were because of cordova dependencies, but it works naman regardless
 npm install
-
 # serve with hot reload at localhost:8080
 npm run dev
 
