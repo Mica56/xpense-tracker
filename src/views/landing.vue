@@ -1,9 +1,11 @@
 <template>
   <div>
-    <body>
-        <h1>ExpenseTrack</h1>
-        <img id="tagline" src="../assets/tagline.png" alt="tagline">
-    </body>
+    <router-link class="fill-link" to="/onboard">
+        <body>
+            <h1>ExpenseTrack</h1>
+            <img id="tagline" src="../assets/tagline.png" alt="tagline">
+        </body>
+    </router-link>
   </div>
 </template>
 
@@ -16,6 +18,13 @@ export default {
 <style>
     body{
         background-color: #2A7C76;
+    }
+    .fill-link{
+        display: block;
+        height: 100%;
+        width: 100%;
+        text-decoration: none;
+        color: inherit
     }
     h1{
         position: absolute;

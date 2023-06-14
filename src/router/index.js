@@ -11,7 +11,7 @@ export default new Router({
     {
       path: '/',
       name: 'LandingPage',
-      component: Onboarding,
+      component: Landing,
       // children: [
       //   {
       //     path: '/onboard',
@@ -21,10 +21,10 @@ export default new Router({
       // ]
     },
     //have problems switching to this route
-    // {
-    //   path: '/onboard',
-    //   name: 'Onboarding',
-    //   component: Onboarding,
-    // }
+    {
+      path: '/onboard',
+      name: 'Onboarding',
+      component: Onboarding,
+    }
   ]
 })
