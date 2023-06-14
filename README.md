@@ -4,7 +4,6 @@
 
 ## Build Setup
 ### NOTE: Make sure you have installed [nodejs](https://nodejs.org/en), [Vue-CLI](https://cli.vuejs.org/guide/installation.html), Cordova (optional; if you want to also run the app with android emulator or run it with your mobile device).
-</br>
 ``` bash
 # install dependencies
 # ignore if there are errors, not sure if those were because of cordova dependencies, but it works naman regardless
