@@ -14,7 +14,7 @@
                     
             <div class="main-body">
                 <div class="avatar-profile">
-                    <img src="images/profile.png">
+                    <img src="../assets/images/profile.png">
                 </div>
                 <h2 class="account-name">Misty Williams</h2>
                 <span class="username">@mistywilliams96</span> <br> <br>
@@ -38,6 +38,7 @@
             </div>
         </div>
     </body> 
+    <NavMenu></NavMenu>
   </div>
 </template>
 
@@ -53,8 +54,5 @@ export default {
 </script>
 
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-    @import url('https://fonts.gstatic.com');
-    @import url('https://fonts.googleapis.com');
-    @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+
 </style>

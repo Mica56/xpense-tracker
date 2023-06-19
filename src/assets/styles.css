@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+@import url('https://fonts.gstatic.com');
+@import url('https://fonts.googleapis.com');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
 * {
   font-family: 'Poppins', sans-serif;
 }
@@ -8,7 +12,7 @@ body {
   background-color: #f2f2f2;
 }
 /* profile */
-.container {
+/* .container {
   width: 414px;
   height: 896px;
   margin: 0 auto;
@@ -143,10 +147,10 @@ body {
 
 .fa-user {
   color: #549994;
-}
+} */
 
 /* add transaction */
-.container {
+/* .container {
   width: 414px;
   height: 896px;
   margin: 0 auto;
@@ -375,4 +379,4 @@ form label {
 
 .fa-user {
   color: #AAAAAA;
-}
+} */

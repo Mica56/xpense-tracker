@@ -15,7 +15,6 @@
 
             <div class="main-body">
             <div class="add-transaction">
-                
                     <!--
                 <form>
                     <label>Name</label>
@@ -50,11 +49,11 @@
                     </div>
                     <ul id="list" class="hide">
                     <li class="options">
-                        <img id="logo" src="images/netflix.png">
+                        <img id="logo" src="../assets/images/netflix.png">
                         Netflix Subscription
                     </li>
                     <li class="options">
-                        <img id="logo" src="images/youtube.png">
+                        <img id="logo" src="../assets/images/youtube.png">
                         Youtube Premium
                     </li>
                     </ul>
@@ -94,30 +93,25 @@
                     </li>
                     </ul>
                 </div>
-                
-                    
-
                     <input type="submit" class="buttone" value="SAVE">
                     <input type="button" class="buttone" value="CANCEL">
                 </form>
             </div>
-            
-            
             </div>
 
             <div class="bottomnav">
             <button type="button"><i class="fa-solid fa-house fa-2x"></i></button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button type="button"><i class="fa-solid fa-user fa-2x"></i></button>
             </div>
-
         </div>
     </body> 
+    <NavMenu></NavMenu>
   </div>
 </template>
 
 <script>
-import 'https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js';
-import 'https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js';
+// import 'https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js';
+// import 'https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js';
 import NavMenu from '../components/navmenu.vue';
 
 export default {
@@ -181,8 +175,5 @@ option.onclick = function () {
 </script>
 
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-    @import url('https://fonts.gstatic.com');
-    @import url('https://fonts.googleapis.com');
-    @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+    
 </style>

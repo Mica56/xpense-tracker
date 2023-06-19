@@ -3,7 +3,7 @@
     <router-link class="fill-link" to="/onboard">
         <body>
             <h1>ExpenseTrack</h1>
-            <img id="tagline" src="../assets/tagline.png" alt="tagline">
+            <img id="tagline" src="../assets/images/tagline.png" alt="tagline">
         </body>
     </router-link>
   </div>

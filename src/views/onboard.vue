@@ -1,13 +1,14 @@
 <template>
   <div>
     <body>
-        <img id="coin" src="../assets/Coin.png" alt="coin">
-        <img id="donut" src="../assets/Donut.png" alt="donut">
+        <img id="coin" src="../assets/images/Coin.png" alt="coin">
+        <img id="donut" src="../assets/images/Donut.png" alt="donut">
         <h3>spend smarter save more</h3>
-        <router-link to="/addtransact" custom v-slot="{ navigate }">
+        <router-link to="/" custom v-slot="{ navigate }">
             <button id="start" @click="navigate">get started</button>
         </router-link>
     </body>
+    <!-- <router-view /> -->
   </div>
 </template>
 
@@ -19,7 +20,7 @@ export default {
 
 <style>
     body{
-        background: url(../assets/onboard-bg1.png) no-repeat;
+        background: url(../assets/images/onboard-bg1.png) no-repeat;
         background-size: cover;
     }
     /* #onboard-upper{

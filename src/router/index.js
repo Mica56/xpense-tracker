@@ -19,6 +19,16 @@ export default new Router({
       //     path: '/onboard',
       //     name: 'Onboarding',
       //     component: Onboarding,
+      //   },
+      //   {
+      //     path: '/profile',
+      //     name: 'Profile',
+      //     component: Profile,
+      //   },
+      //   {
+      //     path: '/addtransact',
+      //     name: 'AddTransaction',
+      //     component: AddTransact,
       //   }
       // ]
     },
@@ -32,10 +42,10 @@ export default new Router({
       name: 'Profile',
       component: Profile,
     },
-    {
-      path: '/addtransact',
-      name: 'AddTransaction',
-      component: AddTransact,
-    }
+    // {
+    //   path: '/addtransact',
+    //   name: 'AddTransaction',
+    //   component: AddTransact,
+    // }
   ]
 })
