@@ -1,8 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 // import HelloWorld from '@/components/HelloWorld'
-import Landing from '@/views/landing.vue'
-import Onboarding from '../views/onboard.vue'
+import Landing from '@/views/Landing.vue'
+import Onboarding from '../views/Onboard.vue'
+import Profile from '../views/Profile.vue'
+import AddTransact from '../views/AddTransact.vue'
 
 Vue.use(Router)
 
@@ -20,11 +22,20 @@ export default new Router({
       //   }
       // ]
     },
-    //have problems switching to this route
     {
       path: '/onboard',
       name: 'Onboarding',
       component: Onboarding,
+    },
+    {
+      path: '/profile',
+      name: 'Profile',
+      component: Profile,
+    },
+    {
+      path: '/addtransact',
+      name: 'AddTransaction',
+      component: AddTransact,
     }
   ]
 })
