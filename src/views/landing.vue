@@ -1,7 +1,7 @@
 <template>
   <div>
     <router-link class="fill-link" to="/onboard">
-        <body>
+        <body id="landing">
             <h1>ExpenseTrack</h1>
             <img id="tagline" src="../assets/images/tagline.png" alt="tagline">
         </body>
@@ -16,7 +16,9 @@ export default {
 </script>
 
 <style>
-    body{
+    body #landing{
+        margin: 0;
+        padding: 100%;
         background-color: #2A7C76;
     }
     .fill-link{

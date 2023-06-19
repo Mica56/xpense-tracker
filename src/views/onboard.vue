@@ -1,10 +1,10 @@
 <template>
   <div>
-    <body>
+    <body id="onboard">
         <img id="coin" src="../assets/images/Coin.png" alt="coin">
         <img id="donut" src="../assets/images/Donut.png" alt="donut">
         <h3>spend smarter save more</h3>
-        <router-link to="/" custom v-slot="{ navigate }">
+        <router-link to="/profile" custom v-slot="{ navigate }">
             <button id="start" @click="navigate">get started</button>
         </router-link>
     </body>
@@ -19,7 +19,7 @@ export default {
 </script>
 
 <style>
-    body{
+    body #onboard{
         background: url(../assets/images/onboard-bg1.png) no-repeat;
         background-size: cover;
     }

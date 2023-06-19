@@ -1,8 +1,18 @@
 <template>
   <div>
     <div class="bottomnav">
-        <button type="button"><i class="fa-solid fa-house fa-2x"></i></button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <button type="button"><i class="fa-solid fa-user fa-2x"></i></button>
+        <router-link to="/addtransact" custom v-slot="{ home }">
+            <button type="button" @click="home">
+                <font-awesome-icon :icon="['fas', 'home']" size="2x"/>
+            </button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </router-link>
+        
+        <router-link to="/profile" custom v-slot="{ profile }">
+            <button type="button" @click="profile">
+                <font-awesome-icon :icon="['fas', 'user']" size="2x"/>
+            </button>
+        </router-link>
+        
     </div>
   </div>
 </template>

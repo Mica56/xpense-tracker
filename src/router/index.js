@@ -42,10 +42,10 @@ export default new Router({
       name: 'Profile',
       component: Profile,
     },
-    // {
-    //   path: '/addtransact',
-    //   name: 'AddTransaction',
-    //   component: AddTransact,
-    // }
+    {
+      path: '/addtransact',
+      name: 'AddTransaction',
+      component: AddTransact,
+    }
   ]
 })

@@ -7,7 +7,7 @@
                 <div class="circle1"></div> 
                 <div class="circle2"></div>
                 <p class="foreground-text">
-                    <i class="fa-solid fa-chevron-left" style="color: #ffffff;"></i>
+                    <font-awesome-icon :icon="['fas', 'chevron-left']" style="color: #ffffff;"/>
                     <span style="margin-left: 100px; font-size: large;">Profile</span>
                 </p>
             </div>
@@ -22,23 +22,23 @@
                 <hr style="width:350px">
                 
                 <p class="transact-list">
-                    <i class="fa-solid fa-user fa-2x" style="color: #666666;"></i>
+                    <font-awesome-icon :icon="['fas', 'user']" size="2x" style="color: #666666;"/>
                     <span>&nbsp;Account Information</span>
                 </p>
                 
                 <p class="transact-list">
-                    <i class="fa-solid fa-clock-rotate-left fa-2x" style="color: #666666;"></i>
+                    <font-awesome-icon :icon="['fas', 'history']" size="2x" style="color: #666666;"/>
                     <span>Transaction History</span>
                 </p>
                 
                 <p class="transact-list">
-                    <i class="fa-solid fa-plus fa-2x" style="color: #666666;"></i>
+                    <font-awesome-icon :icon="['fas', 'plus']" size="2x" style="color: #666666;"/>
                     <span>&nbsp;Add Transaction (Expense/Income)</span>
                 </p>
             </div>
+            <NavMenu></NavMenu>
         </div>
     </body> 
-    <NavMenu></NavMenu>
   </div>
 </template>
 
@@ -54,5 +54,29 @@ export default {
 </script>
 
 <style>
+.foreground-text {
+  position: relative;
+  margin: 2rem;
+  display: flex;
+  align-items: center;
+}
 
+.foreground-text i {
+  margin-right: 20px;
+}
+
+.main-body {
+  padding: 50px 0;
+  text-align: center;
+  overflow: hidden !important;
+  z-index: auto;
+  z-index: 1;
+}
+.fa-home {
+  color: #AAAAAA
+}
+
+.fa-user {
+  color: #549994;
+}
 </style>
