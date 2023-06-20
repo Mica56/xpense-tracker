@@ -243,6 +243,59 @@ form label {
   background-color: #f2f2f2;
   color: #429690;
 }
+/* transaction details */
+.TransactionLogo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #b8b8b8;
+  position: absolute;
+  top: 12%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+.TransactionLogo img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  border-radius: 50%;
+}
+
+.TransactionType {
+  position: relative;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  text-align: center;
+}
+
+.Amount {
+  position: relative;
+  top: 12%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  padding: 20px;
+  text-align: center;
+}
+
+.TransactionInfo {
+  position: relative;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  padding: 30px;
+}
+
+.alignleft {
+  color: #666666;
+  font-weight: bold;
+float: left;
+}
+.alignright {
+float: right;
+  font-weight: bold;
+}
 /* bottom nav */
 .bottomnav {
   position: absolute;
@@ -257,4 +310,6 @@ form label {
   border: 0;
   background-color: transparent;
   padding-top: 30px;
+  /* width: auto;
+  height: auto; */
 }

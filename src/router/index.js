@@ -3,8 +3,11 @@ import Router from 'vue-router'
 // import HelloWorld from '@/components/HelloWorld'
 import Landing from '@/views/Landing.vue'
 import Onboarding from '../views/Onboard.vue'
+import Home from '../views/Home.vue'
 import Profile from '../views/Profile.vue'
 import AddTransact from '../views/AddTransact.vue'
+import TransExpense from '../views/TransExpense.vue'
+import TransIncome from '../views/TransIncome.vue'
 
 Vue.use(Router)
 
@@ -38,6 +41,11 @@ export default new Router({
       component: Onboarding,
     },
     {
+      path: '/home',
+      name: 'Home',
+      component: Home,
+    },
+    {
       path: '/profile',
       name: 'Profile',
       component: Profile,
@@ -46,6 +54,16 @@ export default new Router({
       path: '/addtransact',
       name: 'AddTransaction',
       component: AddTransact,
-    }
+    },
+    {
+      path: '/transexpense',
+      name: 'TransExpense',
+      component: TransExpense,
+    },
+    {
+      path: '/transincome',
+      name: 'TransIncome',
+      component: TransIncome,
+    },
   ]
 })

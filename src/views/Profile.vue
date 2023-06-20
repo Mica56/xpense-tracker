@@ -25,16 +25,20 @@
                     <font-awesome-icon :icon="['fas', 'user']" size="2x" style="color: #666666;"/>
                     <span>&nbsp;Account Information</span>
                 </p>
-                
-                <p class="transact-list">
-                    <font-awesome-icon :icon="['fas', 'history']" size="2x" style="color: #666666;"/>
-                    <span>Transaction History</span>
-                </p>
-                
-                <p class="transact-list">
-                    <font-awesome-icon :icon="['fas', 'plus']" size="2x" style="color: #666666;"/>
-                    <span>&nbsp;Add Transaction (Expense/Income)</span>
-                </p>
+
+                <router-link to="/home" style="text-decoration: none;color: inherit;">
+                    <p class="transact-list">
+                        <font-awesome-icon :icon="['fas', 'history']" size="2x" style="color: #666666;"/>
+                        <span>Transaction History</span>
+                    </p>
+                </router-link>
+
+                <router-link to="/transincome" style="text-decoration: none;color: inherit;">
+                    <p class="transact-list">
+                        <font-awesome-icon :icon="['fas', 'plus']" size="2x" style="color: #666666;"/>
+                        <span>&nbsp;Add Transaction (Expense/Income)</span>
+                    </p>
+                </router-link>
             </div>
             <NavMenu></NavMenu>
         </div>
