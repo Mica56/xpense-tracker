@@ -3,10 +3,66 @@
     <body>
         <div class="container">
             <div class="header">
-                <div class="circle"></div>
-                <div class="circle1"></div> 
-                <div class="circle2"></div>
+            <div class="circle"></div>
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+            <div class="greetingText">
+                <span style="font-size: small;">Good afternoon,</span><br>
+                <span style="font-size: larger;"><b>Nikkun</b></span>
             </div>
+
+        </div>
+
+
+        <div class="mainbody">
+            <div class="TransactionHistory">
+                <div class="List">
+                    <p>
+                        <b>Transaction History</b>
+                    </p>
+                    <button class="seeMoreBtn">See all</button>
+                </div>
+
+                <div class="Transaction1">
+
+                </div>
+
+                <div class="Transaction2">
+
+                </div>
+
+                <div class="Transaction3">
+
+                </div>
+            </div>
+            <router-link to="/addtransact" custom v-slot="{ navigate }">
+              <button class="newTransactionButton" @click="navigate">
+              <!-- <button class="newTransactionButton" @click="$router.push('/addtransact')"> -->
+                  <span class="plus">+</span>
+              </button>
+            </router-link>
+        </div>
+        
+        <div class="box">
+            <div class="balanceInfo">
+                <span class="totalBalance">Total Balance</span>
+                <font-awesome-icon :icon="['fas', 'ellipsis-h']" style="color: #ffffff;float: right;"/>
+                <br>
+                <span style="font-size: x-large;"><b>₱100,000.00</b></span>
+            </div>
+            <div class="IncomeExpenses">
+                <div class="incomeText">
+                    <span style="font-size: small;">Income</span>
+                    <br>
+                    <span style="font-size: large;"><b>₱500.00</b></span>
+                </div>
+                <div class="expenseText">
+                    <span style="font-size: small;">Expenses</span>
+                    <br>
+                    <span style="font-size: large;"><b>₱22,000.55</b></span>
+                </div>
+            </div>
+        </div>
             <NavMenu></NavMenu>
         </div>
     </body>

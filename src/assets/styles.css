@@ -63,6 +63,110 @@ body {
   right: 375px;
   object-fit: cover;
 }
+/* home */
+.greetingText{
+  margin-top: 40px;
+  text-align: left;
+  padding: 10px;
+}
+
+.main-body {
+  padding: 30px 0;
+  text-align: center;
+  overflow: hidden !important;
+  z-index: auto;
+  z-index: 1;
+}
+
+.TransactionHistory {
+  position: relative;
+  top: 0%;
+  left: 0%;
+  transform: translate(0%, 50%);
+  padding: 30px;
+  
+}
+.List{
+  position: relative;
+}
+
+.seeMoreBtn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 23.33px;
+  background-color: #ffffff;
+  border: none;
+  color: #464646;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.newTransactionButton{
+  position: absolute;
+  left: 171px;
+  top: 735px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 75px;
+  height: 75px;
+  background-color: #438883;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.plus {
+  font-size: 30px;
+  color: white;
+}
+
+.box {
+  position: absolute;
+  width: 374px;
+  height: 201px;
+  left: 20px;
+  top: 155px;
+
+  background: #2F7E79;
+  border-radius: 20px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.balanceInfo {
+  text-align: Left;
+  color: #ffffff;
+  padding: 20px;
+}
+
+.totalBalance{
+  padding-right: 5px;
+}
+
+.IncomeExpenses{
+  display: flex;
+  padding: 20px;
+}
+
+.incomeText{
+  color: #ffffff;
+  flex: 1;
+  padding: 10px;
+  padding-right: 0;
+  text-align: left;
+}
+
+.expenseText{
+  color: #ffffff;
+  flex: 1;
+  padding: 10px;
+  padding-left: 0;
+  text-align: right;
+}
+
 /* profile */
 .avatar-profile {
   width: 120px;
@@ -310,6 +414,6 @@ float: right;
   border: 0;
   background-color: transparent;
   padding-top: 30px;
-  /* width: auto;
-  height: auto; */
+  /* width: 30px;
+  height: 30px; */
 }

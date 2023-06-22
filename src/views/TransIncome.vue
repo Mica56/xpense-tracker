@@ -9,7 +9,8 @@
                 <router-link to="/home" style="text-decoration: none;color: inherit;">
                     <font-awesome-icon :icon="['fas', 'chevron-left']" style="color: #ffffff;"/>
                 </router-link>
-                <span style="margin-left: 45px; font-size: large;">Transaction Details</span>
+                <span style="flex: 1; text-align: center; font-size: large;">Transaction Details</span>
+                <font-awesome-icon :icon="['fas', 'ellipsis-h']" style="color: #ffffff;float: right;"/>
             </p>  
             
         </div>

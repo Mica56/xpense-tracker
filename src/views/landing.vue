@@ -1,11 +1,15 @@
 <template>
   <div>
-    <router-link class="fill-link" to="/onboard">
-        <body id="landing">
-            <h1>ExpenseTrack</h1>
-            <img id="tagline" src="../assets/images/tagline.png" alt="tagline">
-        </body>
-    </router-link>
+    <body>
+        <div class="container">
+        <router-link class="fill-link" to="/onboard">
+            <div id="landing">     
+                <h1>ExpenseTrack</h1>
+                <img id="tagline" src="../assets/images/tagline.png" alt="tagline">
+            </div>
+        </router-link>
+        </div>
+    </body>
   </div>
 </template>
 
@@ -16,7 +20,7 @@ export default {
 </script>
 
 <style>
-    body #landing{
+    div #landing{
         margin: 0;
         padding: 100%;
         background-color: #2A7C76;
