@@ -7,7 +7,9 @@
                 <div class="circle1"></div> 
                 <div class="circle2"></div>
                 <p class="foreground-text">
+                  <router-link to="/home" style="text-decoration: none;color: inherit;">
                     <font-awesome-icon :icon="['fas', 'chevron-left']" style="color: #ffffff;"/>
+                  </router-link>
                     <span style="margin-left: 100px; font-size: large;">Profile</span>
                 </p>
             </div>

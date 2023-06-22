@@ -18,10 +18,15 @@ export default new Router({
       name: 'LandingPage',
       component: Landing,
       // children: [
+      //   // {
+      //   //   path: '/onboard',
+      //   //   name: 'Onboarding',
+      //   //   component: Onboarding,
+      //   // },
       //   {
-      //     path: '/onboard',
-      //     name: 'Onboarding',
-      //     component: Onboarding,
+      //     path: '/home',
+      //     name: 'Home',
+      //     component: Home,
       //   },
       //   {
       //     path: '/profile',
@@ -32,7 +37,17 @@ export default new Router({
       //     path: '/addtransact',
       //     name: 'AddTransaction',
       //     component: AddTransact,
-      //   }
+      //   },
+      //   {
+      //     path: '/transexpense',
+      //     name: 'TransExpense',
+      //     component: TransExpense,
+      //   },
+      //   {
+      //     path: '/transincome',
+      //     name: 'TransIncome',
+      //     component: TransIncome,
+      //   },
       // ]
     },
     {

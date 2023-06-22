@@ -6,7 +6,9 @@
             <div class="circle1"></div> 
             <div class="circle2"></div>
             <p class="foreground-text">
-                <font-awesome-icon :icon="['fas', 'chevron-left']" style="color: #ffffff;"/>
+                <router-link to="/home" style="text-decoration: none;color: inherit;">
+                    <font-awesome-icon :icon="['fas', 'chevron-left']" style="color: #ffffff;"/>
+                </router-link>
                 <span style="margin-left: 45px; font-size: large;">Transaction Details</span>
             </p>  
             
