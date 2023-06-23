@@ -1,12 +1,16 @@
 <template>
   <div>
     <body>
-        <img id="coin" src="../assets/Coin.png" alt="coin">
-        <img id="donut" src="../assets/Donut.png" alt="donut">
-        <h3>spend smarter save more</h3>
-        <router-link to="/" custom v-slot="{ navigate }">
-            <button id="start" @click="navigate">get started</button>
-        </router-link>
+        <div class="container">
+            <div id="onboard">
+                <img id="coin" src="../assets/images/Coin.png" alt="coin">
+                <img id="donut" src="../assets/images/Donut.png" alt="donut">
+                <h3>spend smarter save more</h3>
+                <router-link to="/home" custom v-slot="{ navigate }">
+                    <button id="start" @click="navigate">get started</button>
+                </router-link>
+            </div>
+        </div>
     </body>
   </div>
 </template>
@@ -18,8 +22,8 @@ export default {
 </script>
 
 <style>
-    body{
-        background: url(../assets/onboard-bg1.png) no-repeat;
+    div #onboard{
+        background: url(../assets/images/onboard-bg1.png) no-repeat;
         background-size: cover;
     }
     /* #onboard-upper{
@@ -35,7 +39,7 @@ export default {
        position: absolute;
         width: 301px;
         height: 76px;
-        /* left: 56px; */
+        left: 56px;
         top: 643px;
 
         font-family: 'Inter';
@@ -63,7 +67,7 @@ export default {
         position: absolute;
         width: 358px;
         height: 64px;
-        /* left: 28px; */
+        left: 28px;
         top: 745px;
 
         background: linear-gradient(180deg, #69AEA9 -17.19%, #3F8782 123.44%);
