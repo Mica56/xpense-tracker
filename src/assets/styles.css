@@ -319,11 +319,31 @@ body {
   position: relative;
 }
 
+.inputfield::-webkit-outer-spin-button,
+.inputfield::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.price-input::before {
+    content: "\20B1";
+    position: absolute;
+    color: #549994;
+    left: 42px;
+    top: 153px;
+    z-index: 1;
+    transform: translateY(-50%);
+}
+
+.price-input input {
+    padding:  0 45px;
+}
 
 #selecttext {
   display: flex;
   position: relative;
 }
+
 #selecttext img {
   display: flex;
   width: 25px;
