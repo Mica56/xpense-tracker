@@ -198,6 +198,12 @@ body {
   color: #438883;
 }
 
+.profile {
+  text-align: left;
+  padding: 0 35px;
+  margin-bottom: 35px;
+}
+
 .transact-list {
   margin: 2rem;
   display: flex;
