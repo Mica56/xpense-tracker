@@ -10,7 +10,7 @@
                     <font-awesome-icon :icon="['fas', 'chevron-left']" style="color: #ffffff;"/>
                 </router-link>
                 <span style="flex: 1; text-align: center; font-size: large;">Transaction Details</span>
-                <font-awesome-icon :icon="['fas', 'ellipsis-h']" style="color: #ffffff;float: right;"/>
+                <!-- <font-awesome-icon :icon="['fas', 'ellipsis-h']" style="color: #ffffff;float: right;"/> -->
             </p>  
             
         </div>
@@ -104,10 +104,10 @@ export default {
     overflow: hidden !important;
 }
 .fa-home {
-    color: #AAAAAA
+    color: #549994;
 }
 
 .fa-user {
-    color: #549994;
+    color: #AAAAAA;
 }
 </style>

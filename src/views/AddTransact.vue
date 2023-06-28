@@ -11,7 +11,7 @@
                     <font-awesome-icon :icon="['fas', 'chevron-left']" style="color: #ffffff;float: left;"/>
                 </router-link>
                 <span style="flex: 1; text-align: center; font-size: large;">Add Transaction</span>
-                <font-awesome-icon :icon="['fas', 'ellipsis-h']" style="color: #ffffff;float: right;"/>
+                <!-- <font-awesome-icon :icon="['fas', 'ellipsis-h']" style="color: #ffffff;float: right;"/> -->
             </div>
             </div>
 
@@ -62,8 +62,13 @@
                     </li>
                     </ul>
                 </div>
-                    <input type="submit" class="buttone" value="SAVE">
-                    <input type="button" class="buttone" value="CANCEL">
+                    <router-link to="/transexpense" style="text-decoration: none;color: inherit;">
+                        <input type="submit" class="buttone" value="SAVE">
+                    </router-link>
+                    <router-link to="/home" style="text-decoration: none;color: inherit;">
+                        <input type="button" class="buttone" value="CANCEL">
+                    </router-link>
+                    
                 </form>
             </div>
             </div>
