@@ -28,10 +28,10 @@
 
                 <hr style="width:350px">
                 
-                <p class="transact-list">
+                <!-- <p class="transact-list">
                     <font-awesome-icon :icon="['fas', 'user']" size="2x" style="color: #666666;"/>
                     <span>&nbsp;Account Information</span>
-                </p>
+                </p> -->
 
                 <router-link to="/home" style="text-decoration: none;color: inherit;">
                     <p class="transact-list">
@@ -40,7 +40,7 @@
                     </p>
                 </router-link>
 
-                <router-link to="/transexpense" style="text-decoration: none;color: inherit;">
+                <router-link to="/addtransact" style="text-decoration: none;color: inherit;">
                     <p class="transact-list">
                         <font-awesome-icon :icon="['fas', 'plus']" size="2x" style="color: #666666;"/>
                         <span>&nbsp;Add Transaction (Expense/Income)</span>
