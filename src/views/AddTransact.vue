@@ -19,25 +19,11 @@
             <div class="add-transaction">
                 <form>
                 <label>Name</label>
-                <div class="dropdown">
-                    <div id="selectfield">
-                    <p id="selecttext">Select Expense Name</p>
-                    <font-awesome-icon :icon="['fas', 'chevron-down']" size="xs"/>
-                    </div>
-                    <ul id="list" class="hide">
-                    <li class="options">
-                        <img id="logo" src="../assets/images/netflix.png">
-                        Netflix Subscription
-                    </li>
-                    <li class="options">
-                        <img id="logo" src="../assets/images/youtube.png">
-                        Youtube Premium
-                    </li>
-                    </ul>
-                </div>
+                <input type="text" class="inputfield" placeholder="Enter name">
                 <label>Amount</label>
-                <input type="text" class="inputfield">
-                <label>Date</label>
+                <div class="price-input">
+                    <input type="number" class="inputfield" id="price-input" placeholder="Enter price" min="0">
+                </div>
                 <input type="date" class="inputfield">
                 <label>Expense Type</label>
                 <div class="dropdown">
@@ -47,10 +33,16 @@
                     </div>
                     <ul id="list-expense" class="hide1">
                     <li class="options-expense">
-                        Leisure Expense
+                        Food
                     </li>
                     <li class="options-expense">
-                        Travel Expense
+                        Transfer Payments
+                    </li>
+                    <li class="options-expense">
+                        Travel Expenses
+                    </li>
+                    <li class="options-expense">
+                        Load Transaction
                     </li>
                     </ul>
                 </div>
@@ -63,10 +55,10 @@
                     </div>
                     <ul id="list-transaction" class="hide2">
                     <li class="options-transaction">
-                        Expense
+                        Debit
                     </li>
                     <li class="options-transaction">
-                        Income
+                        Credit
                     </li>
                     </ul>
                 </div>
