@@ -23,16 +23,10 @@
                     <button class="seeMoreBtn">See all</button>
                 </div>
 
-                <div class="Transaction1">
-
-                </div>
-
-                <div class="Transaction2">
-
-                </div>
-
-                <div class="Transaction3">
-
+                <div class="Transaction1" v-for="(row, index) in rows">
+                  <div>
+                    Transaction Date: {{ row['input-date'] }} | Name: {{ row['input-name'] }} | Amount/Price: {{ row['price-input'] }}
+                  </div>
                 </div>
             </div>
             <router-link to="/addtransact" custom v-slot="{ navigate }">
@@ -70,14 +64,34 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 import NavMenu from '../components/navmenu.vue';
 
 export default {
     name: 'Home',
     components: {
         NavMenu,
-    }
+    },
+    data () {
+      return {
+        rows: [],
+      }
+    },
+    mounted () {
+      this.pullLatestData()
+    },
+    methods: {
+      async pullLatestData () {
+        axios.get('https://script.googleusercontent.com/macros/echo?user_content_key=x9TjYPnJBXtUIMepCpbAaXL_MZNoq8XoCrKN2UeodXzuTCh_omGNAYIBxERO1x1yqEvv7-rmZYCL6CXfO6CylpO_VfG8Lwtum5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnDqK8jVvBXp9fpjbyJP-wHDAwzk2lY8GtIG9xSFsYMcBRKZwNFLSXmEDt_icz4ystJVeNNTa_XY5uDfOU_W1phOUl5bkwRZ_jw&lib=M3Un0O6LJxLlY9N7wsRNDEi_nbiigEm_c')
+        .then((response) => {
+          console.log(response)
+          this.rows = response.data
+        })
+      },
+    },
 }
+
 </script>
 
 <style>

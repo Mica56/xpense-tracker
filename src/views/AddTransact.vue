@@ -17,14 +17,14 @@
 
             <div class="main-body">
             <div class="add-transaction">
-                <form>
+                <form class="gform pure-form pure-form-stacked" method="POST" data-email="" @submit.prevent="createTransaction" action="https://script.google.com/macros/s/AKfycbwxUrtZCfje7pLaoUG_ENSe_w7N6K0XfYxry1Nsr0qcc-h49p2ZRslWkkukWlW8T_5u/exec">
                 <label>Name</label>
-                <input type="text" class="inputfield" placeholder="Enter name">
+                <input type="text" class="inputfield" placeholder="Enter name" id="input-name" name="input-name">
                 <label>Amount</label>
                 <div class="price-input">
-                    <input type="number" class="inputfield" id="price-input" placeholder="Enter price" min="0">
+                    <input type="number" class="inputfield" id="price-input" name="price-input" placeholder="Enter price" min="0">
                 </div>
-                <input type="date" class="inputfield">
+                <input type="date" class="inputfield" name="input-date" id="input-date">
                 <label>Expense Type</label>
                 <div class="dropdown">
                     <div id="selectfield-expense">
@@ -81,7 +81,83 @@ export default {
     name: 'AddTransaction',
     components: {
         NavMenu,
-    }
+    },
+    methods: {
+      getFormData(form) {
+        var elements = form.elements;
+        var honeypot;
+
+        var fields = Object.keys(elements).filter(function(k) {
+          if (elements[k].name === "honeypot") {
+            honeypot = elements[k].value;
+            return false;
+          }
+          return true;
+        }).map(function(k) {
+          if(elements[k].name !== undefined) {
+            return elements[k].name;
+          // special case for Edge's html collection
+          }else if(elements[k].length > 0){
+            return elements[k].item(0).name;
+          }
+        }).filter(function(item, pos, self) {
+          return self.indexOf(item) == pos && item;
+        });
+
+        var formData = {};
+        fields.forEach(function(name){
+          var element = elements[name];
+          
+          // singular form elements just have one value
+          formData[name] = element.value;
+
+          // when our element has multiple items, get their values
+          if (element.length) {
+            var data = [];
+            for (var i = 0; i < element.length; i++) {
+              var item = element.item(i);
+              if (item.checked || item.selected) {
+                data.push(item.value);
+              }
+            }
+            formData[name] = data.join(', ');
+          }
+        });
+
+        // add form-specific values into the data
+        formData.formDataNameOrder = JSON.stringify(fields);
+        formData.formGoogleSheetName = 'transactions'; // default sheet name
+        formData.formGoogleSendEmail
+          = form.dataset.email || ""; // no email by default
+
+        return {data: formData, honeypot: honeypot};
+      },
+      createTransaction (e) {
+        e.preventDefault();
+        var form = e.target;
+        var formData = this.getFormData(form);
+        var data = formData.data;
+
+        var url = form.action;
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', url);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+        xhr.onreadystatechange = () => {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+              // REDIRECT TO TRANSACTIONS LIST PAGE
+              this.$router.push({ path: '/home' })
+            }
+        };
+
+        var encoded = Object.keys(data).map(function(k) {
+          return encodeURIComponent(k) + "=" + encodeURIComponent(data[k]);
+        }).join('&');
+        console.log(encoded)
+
+        xhr.send(encoded);
+      },
+    },
 }
 
 // var selectField = document.getElementById("selectfield");
