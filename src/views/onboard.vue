@@ -6,7 +6,7 @@
                 <img id="coin" src="../assets/images/Coin.png" alt="coin">
                 <img id="donut" src="../assets/images/Donut.png" alt="donut">
                 <h3>spend smarter save more</h3>
-                <router-link to="/home" custom v-slot="{ navigate }">
+                <router-link to="/login" custom v-slot="{ navigate }">
                     <button id="start" @click="navigate">get started</button>
                 </router-link>
             </div>

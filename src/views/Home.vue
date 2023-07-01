@@ -28,6 +28,28 @@
                     Transaction Date: {{ row['input-date'] }} | Name: {{ row['input-name'] }} | Amount/Price: {{ row['price-input'] }}
                   </div>
                 </div>
+                <!-- when clicked, it should direct to transexpense/transincome -->
+                <div class="Transaction">
+                    <span style="display:inline-flex; align-items:center; gap:9px;">
+                        <img src="../assets/images/upwork-logo.png" alt="logo1">
+                        <span class="translabel">
+                            <label class="transname">Upwork</label>
+                            <label class="transdate">Today</label>
+                        </span>
+                    </span>
+                    <label class="transamt">+₱850.00</label>
+                </div>
+
+                <div class="Transaction">
+                    <span style="display:inline-flex; align-items:center; gap:9px;">
+                        <img src="../assets/images/youtube-logo.png" alt="logo1">
+                        <span class="translabel">
+                            <label class="transname">Youtube</label>
+                            <label class="transdate">Jan 16, 2022</label>
+                        </span>
+                    </span>
+                    <label class="transamt">-₱120.99</label>
+                </div>
             </div>
             <router-link to="/addtransact" custom v-slot="{ navigate }">
               <button class="newTransactionButton" @click="navigate">
