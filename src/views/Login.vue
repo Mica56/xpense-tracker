@@ -43,7 +43,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .container #login {
     width: 414px;
     height: 896px;

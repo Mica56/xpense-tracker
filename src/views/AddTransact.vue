@@ -7,11 +7,10 @@
             <div class="circle1"></div> 
             <div class="circle2"></div>
             <div class="foreground-text">
-                <router-link to="/home" style="text-decoration: none;color: inherit;">
+                <router-link to="/home">
                     <font-awesome-icon :icon="['fas', 'chevron-left']" style="color: #ffffff;float: left;"/>
                 </router-link>
                 <span style="flex: 1; text-align: center; font-size: large;">Add Transaction</span>
-                <!-- <font-awesome-icon :icon="['fas', 'ellipsis-h']" style="color: #ffffff;float: right;"/> -->
             </div>
             </div>
 
@@ -215,45 +214,11 @@ export default {
     //     list.classList.toggle("hide");
     // };
     // }
-
-    // // FOR eXPENSE TYPE DROPDOWN
-    // var selectFieldExpense = document.getElementById("selectfield-expense");
-    // var selectTextExpense = document.getElementById("selecttext-expense");
-    // var optionsExpense = document.getElementsByClassName("options-expense");
-    // var listExpense = document.getElementById("list-expense");
-
-    // selectFieldExpense.onclick = function () {
-    // listExpense.classList.toggle("hide1");
-    // }
-
-    // for (option of optionsExpense) {
-    // option.onclick = function () {
-    //     selectTextExpense.innerHTML = this.innerHTML;
-    //     listExpense.classList.toggle("hide1");
-    // };
-    // }
-
-    // // FOR TRANSACTION TYPE DROPDOWN
-    // var selectFieldTransaction = document.getElementById("selectfield-transaction");
-    // var selectTextTransaction = document.getElementById("selecttext-transaction");
-    // var optionsTransaction = document.getElementsByClassName("options-transaction");
-    // var listTransaction = document.getElementById("list-transaction");
-
-    // selectFieldTransaction.onclick = function () {
-    // listTransaction.classList.toggle("hide2");
-    // }
-
-    // for (option of optionsTransaction) {
-    // option.onclick = function () {
-    //     selectTextTransaction.innerHTML = this.innerHTML;
-    //     listTransaction.classList.toggle("hide2");
-    // };
-    // }
 };
 
 </script>
 
-<style>
+<style scoped>
     .foreground-text {
     display: flex; 
     align-items: center; 
