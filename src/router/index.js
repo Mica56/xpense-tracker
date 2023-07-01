@@ -3,7 +3,7 @@ import Router from 'vue-router'
 // import HelloWorld from '@/components/HelloWorld'
 import Landing from '@/views/landing.vue'
 import Onboarding from '../views/onboard.vue'
-import Login from '../views/Login.vue
+import Login from '../views/Login.vue'
 import Home from '../views/Home.vue'
 import Profile from '../views/Profile.vue'
 import AddTransact from '../views/AddTransact.vue'
