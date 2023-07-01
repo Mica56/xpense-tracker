@@ -23,23 +23,19 @@
                     <button class="seeMoreBtn">See all</button>
                 </div>
 
-                <div class="Transaction1" v-for="(row, index) in rows">
-                  <div>
-                    Transaction Date: {{ row['input-date'] }} | Name: {{ row['input-name'] }} | Amount/Price: {{ row['price-input'] }}
-                  </div>
-                </div>
                 <!-- when clicked, it should direct to transexpense/transincome -->
-                <div class="Transaction">
+                <div class="Transaction" v-for="(row,index) in rows">
                     <span style="display:inline-flex; align-items:center; gap:9px;">
                         <img src="../assets/images/upwork-logo.png" alt="logo1">
                         <span class="translabel">
-                            <label class="transname">Upwork</label>
-                            <label class="transdate">Today</label>
+                            <label class="transname">{{ row['input-name'] }}</label>
+                            <label class="transdate">{{ row['input-date'] }}</label>
                         </span>
                     </span>
-                    <label class="transamt">+₱850.00</label>
+                    <label class="transamt">+₱ {{ row['price-input'] }}</label>
                 </div>
 
+                <!--
                 <div class="Transaction">
                     <span style="display:inline-flex; align-items:center; gap:9px;">
                         <img src="../assets/images/youtube-logo.png" alt="logo1">
@@ -50,6 +46,7 @@
                     </span>
                     <label class="transamt">-₱120.99</label>
                 </div>
+                -->
             </div>
             <router-link to="/addtransact" custom v-slot="{ navigate }">
               <button class="newTransactionButton" @click="navigate">

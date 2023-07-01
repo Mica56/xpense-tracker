@@ -45,7 +45,7 @@
                             Load Transaction
                         </li>
                     </ul> -->
-                    <select id="selectfield-expense" v-model="selected_ET" @input="storeExpType(selected_ET)">
+                    <select id="selectfield-expense" v-model="selected_ET" @input="storeExpType(selected_ET)" name="expense_type">
                         <option value="" id="selecttext-expense" disabled selected>Select Expense Type</option>
                         <font-awesome-icon :icon="['fas', 'chevron-down']" size="xs"/>
                         <option id="list-expense" v-for="option in optionsExpense" :key="option.value">
@@ -68,7 +68,7 @@
                         Credit
                     </li>
                     </ul> -->
-                    <select id="selectfield-transaction" v-model="selected_TT" @input="storeTransType(selected_TT)">
+                    <select id="selectfield-transaction" v-model="selected_TT" @input="storeTransType(selected_TT)" name="transaction_type">
                         <option value="" id="selecttext-transaction" disabled selected>Select Expense Type</option>
                         <font-awesome-icon :icon="['fas', 'chevron-down']" size="xs"/>
                         <option id="list-transaction" v-for="option in optionsTransact" :key="option.value">
@@ -77,15 +77,15 @@
                     </select>
                 </div>
                     <!-- remove this router-link after fixing transaction list -->
-                    <router-link to="/transexpense" style="text-decoration: none;color: inherit;">
+                    <div style="text-decoration: none;color: inherit;">
                         <input type="submit" class="buttone" value="SAVE">
-                    </router-link>
+                    </div>
                     <router-link to="/home" style="text-decoration: none;color: inherit;">
                         <input type="button" class="buttone" value="CANCEL">
                     </router-link>
                     
-                </form>
-            </div>
+                    </form>
+                    </div>
             </div>
             <NavMenu></NavMenu>
         </div>
@@ -102,7 +102,6 @@ export default {
     components: {
         NavMenu,
     },
-=======
     data() {
     return {
         selected_ET: null,
@@ -119,63 +118,61 @@ export default {
         ],
     }
     },
-
     methods: {
-        storeExpType(selected_ET) {
-            console.log(selected_ET) 
-        },
-        storeTransType(selected_TT) {
-        console.log(selected_TT) 
-        },
-        getFormData(form) {
-          var elements = form.elements;
-          var honeypot;
+      storeExpType(selected_ET) {
+          console.log(selected_ET) 
+      },
+      storeTransType(selected_TT) {
+      console.log(selected_TT) 
+      },
+      getFormData(form) {
+        var elements = form.elements;
+        var honeypot;
 
-          var fields = Object.keys(elements).filter(function(k) {
-            if (elements[k].name === "honeypot") {
-              honeypot = elements[k].value;
-              return false;
-            }
-            return true;
-          }).map(function(k) {
-            if(elements[k].name !== undefined) {
-              return elements[k].name;
-            // special case for Edge's html collection
-            }else if(elements[k].length > 0){
-              return elements[k].item(0).name;
-            }
-          }).filter(function(item, pos, self) {
-            return self.indexOf(item) == pos && item;
-          });
+        var fields = Object.keys(elements).filter(function(k) {
+          if (elements[k].name === "honeypot") {
+            honeypot = elements[k].value;
+            return false;
+          }
+          return true;
+        }).map(function(k) {
+          if(elements[k].name !== undefined) {
+            return elements[k].name;
+          // special case for Edge's html collection
+          }else if(elements[k].length > 0){
+            return elements[k].item(0).name;
+          }
+        }).filter(function(item, pos, self) {
+          return self.indexOf(item) == pos && item;
+        });
 
-          var formData = {};
-          fields.forEach(function(name){
-            var element = elements[name];
+        var formData = {};
+        fields.forEach(function(name){
+          var element = elements[name];
 
-            // singular form elements just have one value
-            formData[name] = element.value;
+          // singular form elements just have one value
+          formData[name] = element.value;
 
-            // when our element has multiple items, get their values
-            if (element.length) {
-              var data = [];
-              for (var i = 0; i < element.length; i++) {
-                var item = element.item(i);
-                if (item.checked || item.selected) {
-                  data.push(item.value);
-                }
+          // when our element has multiple items, get their values
+          if (element.length) {
+            var data = [];
+            for (var i = 0; i < element.length; i++) {
+              var item = element.item(i);
+              if (item.checked || item.selected) {
+                data.push(item.value);
               }
-              formData[name] = data.join(', ');
             }
-          });
+            formData[name] = data.join(', ');
+          }
+        });
 
-          // add form-specific values into the data
-          formData.formDataNameOrder = JSON.stringify(fields);
-          formData.formGoogleSheetName = 'transactions'; // default sheet name
-          formData.formGoogleSendEmail
-            = form.dataset.email || ""; // no email by default
+        // add form-specific values into the data
+        formData.formDataNameOrder = JSON.stringify(fields);
+        formData.formGoogleSheetName = 'transactions'; // default sheet name
+        formData.formGoogleSendEmail
+          = form.dataset.email || ""; // no email by default
 
-          return {data: formData, honeypot: honeypot};
-        },
+        return {data: formData, honeypot: honeypot};
       },
       createTransaction (e) {
         e.preventDefault();
@@ -192,13 +189,13 @@ export default {
             if (xhr.readyState === 4 && xhr.status === 200) {
               // REDIRECT TO TRANSACTIONS LIST PAGE
               this.$router.push({ path: '/home' })
+
             }
         };
 
         var encoded = Object.keys(data).map(function(k) {
           return encodeURIComponent(k) + "=" + encodeURIComponent(data[k]);
         }).join('&');
-        console.log(encoded)
 
         xhr.send(encoded);
       },
