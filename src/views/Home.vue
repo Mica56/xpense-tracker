@@ -29,23 +29,19 @@
                             </span>
                         </span>
                         <label class="transamt">+₱850.00</label>
-
-                        <option id="list-expense" v-for="option in optionsExpense" :key="option.value">
-                                {{option.name}}
-                            </option>
                     </div> -->
-                    <!-- when clicked, it should direct to transexpense/transincome -->
-                    <div class="Transaction" v-for="row in rows" :key="row.index">
+                    
+                    <!-- when clicked, it should direct and passed the row data to transexpense/transincome view-->
+                    <div class="Transaction" v-for="row in rows" :key="row.index" v-on:click="clickedEvent()">
                         <span style="display:inline-flex; align-items:center; gap:9px;">
-                            <img src="../assets/images/upwork-logo.png" alt="logo1">
-                            <span class="translabel">
-                                <label class="transname">{{ row['input-name'] }}</label>
-                                <label class="transdate">{{ row['input-date'] }}</label>
-                            </span>
+                                <img src="../assets/images/upwork-logo.png" alt="logo1">
+                                <span class="translabel">
+                                    <label class="transname">{{ row['input-name'] }}</label>
+                                    <label class="transdate">{{ row['input-date'] }}</label>
+                                </span>
                         </span>
                         <label class="transamt">+₱ {{ row['price-input'] }}</label>
                     </div>
-
                     <!--
                     <div class="Transaction">
                         <span style="display:inline-flex; align-items:center; gap:9px;">
@@ -120,6 +116,10 @@ export default {
           this.rows = response.data
         })
       },
+      clickedEvent () {
+        this.$router.push('/transincome');
+        // this.$emit('rowData', row);
+      }
     },
 }
 
