@@ -1,3 +1,5 @@
+/* NOTE: object-fit not working on Internet Explorer, if u r using other browser naman, just ignore it for now */
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 * {
   font-family: 'Poppins', sans-serif;
@@ -233,6 +235,7 @@ form .txt_field{
 
 .incomeText{
   color: #ffffff;
+  -ms-flex: 1;
   flex: 1;
   padding: 10px;
   padding-right: 0;
@@ -241,6 +244,7 @@ form .txt_field{
 
 .expenseText{
   color: #ffffff;
+  -ms-flex: 1;
   flex: 1;
   padding: 10px;
   padding-left: 0;
@@ -250,7 +254,7 @@ form .txt_field{
 .Transaction {
   display:inline-flex; 
   align-items:center;
-  padding: 10px;
+  /* padding: 10px; */
   gap: 120px;
   }
   
