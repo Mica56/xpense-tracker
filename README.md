@@ -2,6 +2,9 @@
 
 > A Cordova-Vuejs project that tracks and monitors user's expenses
 
+## Important Files and Links
+- [Sheet Database](https://docs.google.com/spreadsheets/d/1rYfhsKkO6hP0wk1-GJgBCnpqGP7f6BPkyaaX-spLCS8/edit?usp=sharing)
+
 ## Build Setup
 ### NOTE: Make sure you have installed [nodejs](https://nodejs.org/en), [Vue-CLI](https://cli.vuejs.org/guide/installation.html), Cordova (optional; if you want to also run the app with android emulator or run it with your mobile device).
 ``` bash
