@@ -71,7 +71,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .header {
     height: 190px;
     background-color: #429690;

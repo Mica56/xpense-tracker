@@ -6,9 +6,13 @@
                 <img id="coin" src="../assets/images/Coin.png" alt="coin">
                 <img id="donut" src="../assets/images/Donut.png" alt="donut">
                 <h3>spend smarter save more</h3>
-                <router-link to="/login" custom v-slot="{ navigate }">
+                <!-- <router-link to="/login" custom v-slot="{ navigate }">
                     <button id="start" @click="navigate">get started</button>
+                </router-link> -->
+                <router-link to="/login">
+                    <button id="start">get started</button>
                 </router-link>
+                <!-- <router-link id="start" to="/login" tag="button" >get started</router-link> -->
             </div>
         </div>
     </body>
@@ -21,7 +25,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
     div #onboard{
         background: url(../assets/images/onboard-bg1.png) no-repeat;
         background-size: cover;

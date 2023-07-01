@@ -19,7 +19,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
     div #landing{
         margin: 0;
         padding: 100%;
