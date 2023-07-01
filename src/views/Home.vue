@@ -30,6 +30,7 @@
                         </span>
                         <label class="transamt">+₱850.00</label>
                     </div> -->
+                    
                     <!-- when clicked, it should direct and passed the row data to transexpense/transincome view-->
                     <div class="Transaction" v-for="row in rows" :key="row.index" v-on:click="clickedEvent()">
                         <span style="display:inline-flex; align-items:center; gap:9px;">
@@ -41,7 +42,6 @@
                         </span>
                         <label class="transamt">+₱ {{ row['price-input'] }}</label>
                     </div>
-
                     <!--
                     <div class="Transaction">
                         <span style="display:inline-flex; align-items:center; gap:9px;">
