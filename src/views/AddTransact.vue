@@ -83,9 +83,8 @@
                     <router-link to="/home" style="text-decoration: none;color: inherit;">
                         <input type="button" class="buttone" value="CANCEL">
                     </router-link>
-                    
-                    </form>
-                    </div>
+                </form>
+              </div>
             </div>
             <NavMenu></NavMenu>
         </div>
