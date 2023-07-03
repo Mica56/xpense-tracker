@@ -6,10 +6,11 @@
             <div class="circle"></div>
             <div class="circle1"></div> 
             <div class="circle2"></div>
+            <router-link to="/home" style="text-decoration: none;color: inherit;">
+                    <font-awesome-icon :icon="['fas', 'chevron-left']" class="back" style="color: #ffffff;float: left;"/>
+              </router-link>
             <div class="foreground-text">
-                <router-link to="/home" style="text-decoration: none;color: inherit;">
-                    <font-awesome-icon :icon="['fas', 'chevron-left']" style="color: #ffffff;float: left;"/>
-                </router-link>
+
                 <span style="flex: 1; text-align: center; font-size: large;">Add Transaction</span>
                 <!-- <font-awesome-icon :icon="['fas', 'ellipsis-h']" style="color: #ffffff;float: right;"/> -->
             </div>
@@ -24,6 +25,7 @@
                 <div class="price-input">
                     <input type="number" class="inputfield" id="price-input" name="price-input" placeholder="Enter price" min="0">
                 </div>
+                <label>Date</label>
                 <input type="date" class="inputfield" name="input-date" id="input-date">
                 <label>Expense Type</label>
                 <div class="dropdown">
@@ -47,7 +49,7 @@
                     </ul> -->
                     <select id="selectfield-expense" v-model="selected_ET" @input="storeExpType(selected_ET)" name="expense_type">
                         <option value="" id="selecttext-expense" disabled selected>Select Expense Type</option>
-                        <font-awesome-icon :icon="['fas', 'chevron-down']" size="xs"/>
+                        
                         <option id="list-expense" v-for="option in optionsExpense" :key="option.value">
                             {{option.name}}
                         </option>
@@ -68,20 +70,23 @@
                         Credit
                     </li>
                     </ul> -->
+                    
                     <select id="selectfield-transaction" v-model="selected_TT" @input="storeTransType(selected_TT)" name="transaction_type">
                         <option value="" id="selecttext-transaction" disabled selected>Select Expense Type</option>
-                        <font-awesome-icon :icon="['fas', 'chevron-down']" size="xs"/>
                         <option id="list-transaction" v-for="option in optionsTransact" :key="option.value">
                             {{option.name}}
                         </option>
+                        
                     </select>
+        
                 </div>
                     <div style="text-decoration: none;color: inherit;">
                         <input type="submit" class="buttone" value="SAVE">
+                        <router-link to="/home" style="text-decoration: none;color: inherit;">
+                          <input type="button" class="buttone" value="CANCEL">
+                        </router-link>
                     </div>
-                    <router-link to="/home" style="text-decoration: none;color: inherit;">
-                        <input type="button" class="buttone" value="CANCEL">
-                    </router-link>
+                    
                 </form>
               </div>
             </div>
@@ -254,15 +259,32 @@ export default {
 </script>
 
 <style>
+
+    .back {
+      position: absolute;
+      margin-top: 65px;
+      text-align: left;
+      padding: 10px;
+      z-index: 1;
+    }
+
     .foreground-text {
-    display: flex; 
-    align-items: center; 
-    margin: 2rem;
+      position: relative;
+      display: flex;
+      align-items: center;
+      margin-top: 60px;
+      padding: 10px;
+    }
+
+    .foreground-text span {
+      position: relative;
+      width: 100%;
+      justify-content: center;
     }
 
     .main-body {
     display: flex;
-    align-items: center;
+    text-align: left;
     justify-content: center;
     overflow: hidden !important;
     }

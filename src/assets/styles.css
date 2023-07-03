@@ -12,13 +12,12 @@ body {
 }
 
 .container {
-  width: 414px;
+  width: 100%;
+  max-width: 414px;
   height: 896px;
-  margin: 0 auto;
+  margin: auto;
   position: relative;
   background-color: #ffffff;
-  box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
 }
 
 .header {
@@ -26,7 +25,6 @@ body {
   background-color: #429690;
   border-radius: 0 0 100% 100% / 0 0 35% 35%;
   color: #fff;
-  text-align: center;
   padding: 20px;
 }
 
@@ -42,6 +40,7 @@ body {
   left: 0;
   object-fit: cover;
 }
+
 .circle1 {
   position: absolute;
   width: 100px;
@@ -65,6 +64,7 @@ body {
   right: 375px;
   object-fit: cover;
 }
+
 /* login */
 .mainbody {
   height: 500px;
@@ -83,11 +83,10 @@ body {
 
 .LoginBox {
   position: absolute;
-  top: 50%;
+  top: 47%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 374px;
-  height: 350px;
+  width: 358px;
   background: #ffffff;
   border-radius: 20px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
@@ -132,7 +131,6 @@ form .txt_field{
   top: 40px;
   left: 0;
   width: 100%;
-  height: 2px;
   background: #63B5AF;
 }
 
@@ -145,38 +143,70 @@ form .txt_field{
 .ForgotPass{
   margin: -5px 0 20px 5px;
 }
+
 /* home */
 .greetingText{
-  margin-top: 40px;
+  margin-top: 60px;
   text-align: left;
   padding: 10px;
 }
 
 .main-body {
   padding: 30px 0;
-  text-align: center;
   overflow: hidden !important;
   z-index: auto;
   z-index: 1;
 }
 
 .TransactionHistory {
-  position: relative;
-  top: 0%;
+  position: absolute;
+  top: 210px;
+  width: 100%;
+  height: 400px;
   left: 0%;
   transform: translate(0%, 50%);
-  padding: 30px;
   
+  overflow:hidden; 
+  overflow-y:scroll;
+  justify-content: space-between;
 }
+
+.TransactionHistory::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.TransactionHistory {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+
 .List{
+  position: absolute;
+  width: 100%;
+  display: flex;
+  top: 350px;
+  justify-content: space-between;
+}
+
+.List b {
   position: relative;
+  padding: 20px;
+  justify-content: center;
+  text-align: center;
+}
+
+.List button {
+  top: 0;
+  position: relative;
+  height: 70px;
 }
 
 .seeMoreBtn {
   position: absolute;
   top: 0;
-  right: 0;
-  width: 50px;
+  width: 81px;
   height: 23.33px;
   background-color: #ffffff;
   border: none;
@@ -188,7 +218,7 @@ form .txt_field{
 .newTransactionButton{
   position: absolute;
   left: 171px;
-  top: 735px;
+  top: 745px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -199,11 +229,14 @@ form .txt_field{
   border: none;
   cursor: pointer;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  font-size: 30px;
+  color: #ffffff;
 }
 
-.plus {
-  font-size: 30px;
-  color: white;
+.newTransactionButton:hover {
+  background-color: #f2f2f2;
+  color: #429690;
 }
 
 .box {
@@ -252,32 +285,35 @@ form .txt_field{
 }
 
 .Transaction {
-  display:inline-flex; 
+  height: 75px;
+  display:flex; 
   align-items:center;
-  /* padding: 10px; */
-  gap: 120px;
+  padding: 0 25px;
+  justify-content: space-between;
   }
   
-  .translabel label{
+.translabel label{
     display:block;
   }
 
-  .transname {
+.transname {
   color: #000;
   font-size: 16px;
   font-weight: 500;
   letter-spacing: -0.32px;
   text-transform: capitalize; 
+  width: 100%;
   }
   
-  .transdate {
+.transdate {
   color:#666666;
   font-size: 13px;
   letter-spacing: -0.26px;
   text-transform: capitalize; 
+  width: 100%;
   }
   
-  .transamt {
+.transamt {
   color: #25A969;
   text-align: right;
   font-size: 18px;
@@ -321,11 +357,11 @@ form .txt_field{
 .profile {
   text-align: left;
   padding: 0 35px;
-  margin-bottom: 35px;
+  margin-bottom: 30px;
 }
 
 .transact-list {
-  margin: 2rem;
+  margin: 1.5rem 2rem;
   display: flex;
   align-items: center;
 }
@@ -333,6 +369,11 @@ form .txt_field{
 .transact-list font-awesome-icon {
   margin-right: 20px;
 }
+
+.transact-list span {
+  padding: 10px;
+}
+
 /* add transaction */
 .add-transaction {
   width: 358px;
@@ -340,19 +381,31 @@ form .txt_field{
   box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.2);
   background-color: #ffffff;
   margin: auto;
+  top: 155px;
   border-radius: 20px;
   position: absolute;
-  top: 15%;
+  top: 150px;
   z-index: 1;
 }
 
 .dropdown {
+  width: 318px;
   height: 50px;
   margin-bottom: 10px;
+  background-image: url("../assets/images/dropdown-arrow.png");
+  background-repeat: no-repeat;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: '';
 }
 
 #selectfield, #selectfield-expense, #selectfield-transaction {
   padding: 0 20px;
+  width: 100%;
   height: 50px;
   border: 1px solid #429690;
   border-radius: 6px;
@@ -450,7 +503,7 @@ form .txt_field{
     position: absolute;
     color: #549994;
     left: 42px;
-    top: 153px;
+    top: 152px;
     z-index: 1;
     transform: translateY(-50%);
 }
@@ -493,6 +546,7 @@ form label {
   background-color: #f2f2f2;
   color: #429690;
 }
+
 /* transaction details */
 .TransactionLogo {
   width: 80px;
@@ -540,12 +594,14 @@ form label {
 .alignleft {
   color: #666666;
   font-weight: bold;
-float: left;
+  float: left;
 }
+
 .alignright {
 float: right;
   font-weight: bold;
 }
+
 /* bottom nav */
 .bottomnav {
   position: absolute;
@@ -553,7 +609,9 @@ float: right;
   width: 100%;
   height: 80px;
   box-shadow: 0px -2px 6px rgba(0, 0, 0, 0.2);
-  text-align: center;
+  text-align: center;overflow: hidden;
+  overflow: hidden;
+  z-index: 1;
 }
 
 .bottomnav button {

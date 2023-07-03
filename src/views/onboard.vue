@@ -1,18 +1,18 @@
 <template>
-  <div>
     <body>
         <div class="container">
             <div id="onboard">
+                <!--<img id="tagline" src="../assets/images/onboard-bg1.png" alt="tagline">-->
                 <img id="coin" src="../assets/images/Coin.png" alt="coin">
                 <img id="donut" src="../assets/images/Donut.png" alt="donut">
-                <h3>spend smarter save more</h3>
-                <router-link to="/login" custom v-slot="{ navigate }">
-                    <button id="start" @click="navigate">get started</button>
-                </router-link>
+                <h3 class="tagline">Spend smarter Save more</h3>
             </div>
+            
+            <router-link to="/login" custom v-slot="{ navigate }">
+                    <button id="start" @click="navigate">get started</button>
+            </router-link>
         </div>
     </body>
-  </div>
 </template>
 
 <script>
@@ -22,10 +22,43 @@ export default {
 </script>
 
 <style>
-    div #onboard{
-        background: url(../assets/images/onboard-bg1.png) no-repeat;
-        background-size: cover;
+* {
+    font-family: 'Poppins';
+}
+
+    .container {
+        background-color: #ffffff;
     }
+
+    #onboard{
+        position:absolute;
+        width: 100%;
+        height: 100%;
+        background: url(../assets/images/onboard-bg1.png) no-repeat;
+        text-align: center;
+        justify-content: center;
+    }
+
+    #coin{
+        position:relative;
+        width: 300px;
+        height: 300px;
+        float: left;
+        top: 50px;
+    }
+
+    #donut{
+        position:relative;
+        width: 250px;
+        height: 300px;
+        transform: rotate(-10deg);
+        top: -50px;
+        right: 30px;
+        float: right;
+        
+        
+    }
+    
     /* #onboard-upper{
         position: absolute;
         width: 414px;
@@ -35,69 +68,40 @@ export default {
         
         background: white;
     } */
-    h3{
-       position: absolute;
-        width: 301px;
-        height: 76px;
-        left: 56px;
-        top: 643px;
 
-        font-family: 'Inter';
-        font-style: normal;
+    .tagline {
+        position: absolute;
+        width: 70%;
+        height: 76px;
+        top: 68%;
+        left: 65px;
         font-weight: 700;
         font-size: 36px;
         line-height: 38px;
-
-        /* or 106% */
-        text-align: center;
-        letter-spacing: -0.02em;
         text-transform: capitalize;
-
-        /* GREEN */
         color: #438883;
     }
+
     #start{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        padding: 10px 20px;
-        gap: 10px;
-
-        position: absolute;
-        width: 358px;
+        position: relative;
+        width: 85%;
         height: 64px;
-        left: 28px;
+        left: 30px;
         top: 745px;
-
-        background: linear-gradient(180deg, #69AEA9 -17.19%, #3F8782 123.44%);
+        border: none;
+        background-color: #438883;
         border-radius: 40px;
-
-        font-family: 'Inter';
-        font-style: normal;
+        cursor: pointer;
         font-weight: 600;
         font-size: 18px;
-        line-height: 38px;
-
-        /* identical to box height, or 211% */
-        text-align: center;
-        letter-spacing: -0.02em;
         text-transform: capitalize;
         color: #FFFFFF;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
-    #donut{
-        position: absolute;
-        width: 167.32px;
-        height: 224.94px;
-        left: 165px;
-        top: 316.32px;
+
+    #start:hover {
+        background-color: #f2f2f2;
+        color: #429690;
     }
-    #coin{
-        position: absolute;
-        width: 207.13px;
-        height: 198.34px;
-        left: 91.22px;
-        top: 106px;
-    }
+    
 </style>

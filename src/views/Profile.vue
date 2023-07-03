@@ -6,12 +6,12 @@
                 <div class="circle"></div>
                 <div class="circle1"></div> 
                 <div class="circle2"></div>
-                <p class="foreground-text">
-                  <router-link to="/home" style="text-decoration: none;color: inherit;">
-                    <font-awesome-icon :icon="['fas', 'chevron-left']" style="color: #ffffff;"/>
+                <router-link to="/home" style="text-decoration: none;color: inherit;">
+                    <font-awesome-icon :icon="['fas', 'chevron-left']" class="back" style="color: #ffffff;"/>
                   </router-link>
-                    <span style="margin-left: 100px; font-size: large;">Profile</span>
-                </p>
+                <div class="foreground-text">
+                    <span style="flex: 1; text-align: center; font-size: large;">Profile</span>
+                </div>
             </div>
                     
             <div class="main-body">
@@ -35,14 +35,14 @@
 
                 <router-link to="/home" style="text-decoration: none;color: inherit;">
                     <p class="transact-list">
-                        <font-awesome-icon :icon="['fas', 'history']" size="2x" style="color: #666666;"/>
+                        <font-awesome-icon :icon="['fas', 'history']" size="2x" style="color: #549994;"/>
                         <span>Transaction History</span>
                     </p>
                 </router-link>
 
                 <router-link to="/addtransact" style="text-decoration: none;color: inherit;">
                     <p class="transact-list">
-                        <font-awesome-icon :icon="['fas', 'plus']" size="2x" style="color: #666666;"/>
+                        <font-awesome-icon :icon="['fas', 'plus']" size="2x" style="color: #549994;"/>
                         <span>&nbsp;Add Transaction (Expense/Income)</span>
                     </p>
                 </router-link>
@@ -65,11 +65,20 @@ export default {
 </script>
 
 <style>
+.back {
+    position: absolute;
+    margin-top: 65px;
+    text-align: left;
+    padding: 10px;
+    z-index: 1;
+}
+
 .foreground-text {
-  position: relative;
-  margin: 2rem;
-  display: flex;
-  align-items: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-top: 60px;
+    padding: 10px;
 }
 
 .foreground-text i {
@@ -78,11 +87,17 @@ export default {
 
 .main-body {
   padding: 50px 0;
-  text-align: center;
   overflow: hidden !important;
+  text-align: center;
   z-index: auto;
   z-index: 1;
 }
+
+.email, .number, .account-type {
+  color: #549994;
+  font-weight: bold;
+}
+
 .fa-home {
   color: #AAAAAA
 }

@@ -8,20 +8,22 @@
             <div class="circle2"></div>
             <div class="greetingText">
                 <span style="font-size: small;">Good afternoon,</span><br>
-                <span style="font-size: larger;"><b>Nikkun</b></span>
+                <span style="font-size: larger;"><b>Misty Williams</b></span>
             </div>
 
         </div>
 
 
         <div class="mainbody">
-            <div class="TransactionHistory">
-                <div class="List">
-                    <p>
+            <div class="List">
+                    
                         <b>Transaction History</b>
-                    </p>
+                
                     <button class="seeMoreBtn">See all</button>
+                    
                 </div>
+            <div class="TransactionHistory">
+                
                 <!-- <div class="Transaction">
                     <span style="display:inline-flex; align-items:center; gap:9px;">
                         <img src="../assets/images/upwork-logo.png" alt="logo1">
@@ -127,6 +129,10 @@ export default {
 </script>
 
 <style>
+* {
+    font-family: 'Poppins';
+}
+
 .fa-home {
     color: #549994;
 }

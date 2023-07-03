@@ -1,12 +1,12 @@
 <template>
   <div>
     <body>
-        <div id="login" class="container">
+        <div class="container">
             <div class="header">
                 <div class="circle"></div>
                 <div class="circle1"></div>
                 <div class="circle2"></div>
-                <h3 class="Title">XPENSE TRACK</h3>
+                <h3 id="apptitle">ExpenseTrack</h3>
             </div>
 
             <div class="mainbody">
@@ -20,12 +20,9 @@
                         </div>
                         <div class="txt_field">
                             <input type="password" required>
-                            <span></span>
                             <label>Password</label>
                         </div>
-                        <div class="ForgotPass">Forgot Password?
-
-                        </div>
+                        <div class="ForgotPass">Forgot Password?</div>
                         <router-link to="/home" style="text-decoration: none;color: inherit;">
                             <input type="submit" value="Login">
                         </router-link>
@@ -44,7 +41,12 @@ export default {
 </script>
 
 <style>
-.container #login {
+* {
+    font-family: 'Poppins';
+}
+
+
+#login {
     width: 414px;
     height: 896px;
     margin: 0 auto;
@@ -54,17 +56,13 @@ export default {
     overflow: hidden;
 }
 
-.header {
-    height: 120px;
-    padding: 20px;
+#apptitle {
     text-align: center;
-
-}
-
-.header h3{
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 61px;
     color: #ffffff;
-    padding: 30px 30px;
-    font-size: xx-large;
+    padding: 80px 0px;
 }
 
 input[type="submit"]{
@@ -72,8 +70,15 @@ input[type="submit"]{
     height: 50px;
     border: 2px;
     background: #438883;
-    border-radius: 25px;
+    border-radius: 40px;
     font-size: 18px;
+    cursor: pointer;
     color: #ffffff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+input[type="submit"]:hover {
+    background-color: #f2f2f2;
+    color: #429690;
 }
 </style>
