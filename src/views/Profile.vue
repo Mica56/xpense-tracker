@@ -66,7 +66,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .back {
     position: absolute;
     margin-top: 65px;
@@ -99,9 +99,6 @@ export default {
   font-weight: bold;
 }
 
-</style>
-
-<style>
 #prof-nav .fa-home {
   color: #AAAAAA
 }
@@ -110,3 +107,5 @@ export default {
   color: #549994;
 }
 </style>
+
+// <style></style>
