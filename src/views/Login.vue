@@ -40,13 +40,11 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 * {
     font-family: 'Poppins';
 }
-
-
-#login {
+.container #login {
     width: 414px;
     height: 896px;
     margin: 0 auto;

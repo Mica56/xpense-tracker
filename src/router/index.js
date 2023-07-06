@@ -1,13 +1,13 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Landing from '@/views/Landing.vue'
-import Onboarding from '../views/Onboard.vue'
-import Login from '../views/Login.vue'
-import Home from '../views/Home.vue'
-import Profile from '../views/Profile.vue'
-import AddTransact from '../views/AddTransact.vue'
-import TransExpense from '../views/TransExpense.vue'
-import TransIncome from '../views/TransIncome.vue'
+// import Onboarding from '../views/Onboard.vue'
+// import Login from '../views/Login.vue'
+// import Home from '../views/Home.vue'
+// import Profile from '../views/Profile.vue'
+// import AddTransact from '../views/AddTransact.vue'
+// import TransExpense from '../views/TransExpense.vue'
+// import TransIncome from '../views/TransIncome.vue'
 
 Vue.use(Router)
 
@@ -17,73 +17,41 @@ export default new Router({
       path: '/',
       name: 'LandingPage',
       component: Landing,
-      // children: [
-      //   // {
-      //   //   path: '/onboard',
-      //   //   name: 'Onboarding',
-      //   //   component: Onboarding,
-      //   // },
-      //   {
-      //     path: '/home',
-      //     name: 'Home',
-      //     component: Home,
-      //   },
-      //   {
-      //     path: '/profile',
-      //     name: 'Profile',
-      //     component: Profile,
-      //   },
-      //   {
-      //     path: '/addtransact',
-      //     name: 'AddTransaction',
-      //     component: AddTransact,
-      //   },
-      //   {
-      //     path: '/transexpense',
-      //     name: 'TransExpense',
-      //     component: TransExpense,
-      //   },
-      //   {
-      //     path: '/transincome',
-      //     name: 'TransIncome',
-      //     component: TransIncome,
-      //   },
-      // ]
     },
     {
       path: '/onboard',
       name: 'Onboarding',
-      component: Onboarding,
+      component: () => import('../views/Onboard.vue'),
     },
     {
       path: '/login',
       name: 'Login',
-      component: Login,
+      component: () => import('../views/Login.vue'),
     },
     {
       path: '/home',
       name: 'Home',
-      component: Home,
+      component: () => import('../views/Home.vue'),
     },
     {
       path: '/profile',
       name: 'Profile',
-      component: Profile,
+      component: () => import('../views/Profile.vue'),
     },
     {
       path: '/addtransact',
       name: 'AddTransaction',
-      component: AddTransact,
+      component: () => import('../views/AddTransact.vue'),
     },
     {
       path: '/transexpense',
       name: 'TransExpense',
-      component: TransExpense,
+      component: () => import('../views/TransExpense.vue'),
     },
     {
       path: '/transincome',
       name: 'TransIncome',
-      component: TransIncome,
+      component: () => import('../views/TransIncome.vue'),
     },
   ]
 })

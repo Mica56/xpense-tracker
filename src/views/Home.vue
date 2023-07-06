@@ -31,66 +31,63 @@
                             <label class="transname">Upwork</label>
                             <label class="transdate">Today</label>
                         </span>
-                    </span>
-                    <label class="transamt">+₱850.00</label>
-
-                    <option id="list-expense" v-for="option in optionsExpense" :key="option.value">
-                            {{option.name}}
-                        </option>
-                </div> -->
-                <!-- when clicked, it should direct to transexpense/transincome -->
-                <div class="Transaction" v-for="row in rows" :key="row.index">
-                    <span style="display:inline-flex; align-items:center; gap:9px;">
-                        <img src="../assets/images/upwork-logo.png" alt="logo1">
-                        <span class="translabel">
-                            <label class="transname">{{ row['input-name'] }}</label>
-                            <label class="transdate">{{ row['input-date'] }}</label>
+                        <label class="transamt">+₱850.00</label>
+                    </div> -->
+                    
+                    <!-- when clicked, it should direct and passed the row data to transexpense/transincome view-->
+                    <div class="Transaction" v-for="row in rows" :key="row.index" v-on:click="clickedEvent()">
+                        <span style="display:inline-flex; align-items:center; gap:9px;">
+                                <img src="../assets/images/upwork-logo.png" alt="logo1">
+                                <span class="translabel">
+                                    <label class="transname">{{ row['input-name'] }}</label>
+                                    <label class="transdate">{{ row['input-date'] }}</label>
+                                </span>
                         </span>
-                    </span>
-                    <label class="transamt">+₱ {{ row['price-input'] }}</label>
-                </div>
-
-                <!--
-                <div class="Transaction">
-                    <span style="display:inline-flex; align-items:center; gap:9px;">
-                        <img src="../assets/images/youtube-logo.png" alt="logo1">
-                        <span class="translabel">
-                            <label class="transname">Youtube</label>
-                            <label class="transdate">Jan 16, 2022</label>
+                        <label class="transamt">+₱ {{ row['price-input'] }}</label>
+                    </div>
+                    <!--
+                    <div class="Transaction">
+                        <span style="display:inline-flex; align-items:center; gap:9px;">
+                            <img src="../assets/images/youtube-logo.png" alt="logo1">
+                            <span class="translabel">
+                                <label class="transname">Youtube</label>
+                                <label class="transdate">Jan 16, 2022</label>
+                            </span>
                         </span>
-                    </span>
-                    <label class="transamt">-₱120.99</label>
+                        <label class="transamt">-₱120.99</label>
+                    </div>
+                    -->
                 </div>
-                -->
+                <router-link to="/addtransact">
+                    <button class="newTransactionButton"><span class="plus">+</span></button>
+                </router-link>
+                <!-- <router-link to="/addtransact" custom v-slot="{ navigate }">
+                    <button class="newTransactionButton" @click="navigate">
+                        <span class="plus">+</span>
+                    </button>
+                </router-link> -->
             </div>
-            <router-link to="/addtransact" custom v-slot="{ navigate }">
-              <button class="newTransactionButton" @click="navigate">
-              <!-- <button class="newTransactionButton" @click="$router.push('/addtransact')"> -->
-                  <span class="plus">+</span>
-              </button>
-            </router-link>
-        </div>
-        
-        <div class="box">
-            <div class="balanceInfo">
-                <span class="totalBalance">Total Balance</span>
-                <font-awesome-icon :icon="['fas', 'ellipsis-h']" style="color: #ffffff;float: right;"/>
-                <br>
-                <span style="font-size: x-large;"><b>₱100,000.00</b></span>
-            </div>
-            <div class="IncomeExpenses">
-                <div class="incomeText">
-                    <span style="font-size: small;">Income</span>
+            
+            <div class="box">
+                <div class="balanceInfo">
+                    <span class="totalBalance">Total Balance</span>
+                    <font-awesome-icon :icon="['fas', 'ellipsis-h']" style="color: #ffffff;float: right;"/>
                     <br>
-                    <span style="font-size: large;"><b>₱500.00</b></span>
+                    <span style="font-size: x-large;"><b>₱100,000.00</b></span>
                 </div>
-                <div class="expenseText">
-                    <span style="font-size: small;">Expenses</span>
-                    <br>
-                    <span style="font-size: large;"><b>₱22,000.55</b></span>
+                <div class="IncomeExpenses">
+                    <div class="incomeText">
+                        <span style="font-size: small;">Income</span>
+                        <br>
+                        <span style="font-size: large;"><b>₱500.00</b></span>
+                    </div>
+                    <div class="expenseText">
+                        <span style="font-size: small;">Expenses</span>
+                        <br>
+                        <span style="font-size: large;"><b>₱22,000.55</b></span>
+                    </div>
                 </div>
             </div>
-        </div>
             <NavMenu></NavMenu>
         </div>
     </body>
@@ -99,7 +96,6 @@
 
 <script>
 import axios from 'axios';
-
 import NavMenu from '../components/navmenu.vue';
 
 export default {
@@ -123,6 +119,10 @@ export default {
           this.rows = response.data
         })
       },
+      clickedEvent () {
+        this.$router.push('/transincome');
+        // this.$emit('rowData', row);
+      }
     },
 }
 

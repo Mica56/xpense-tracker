@@ -8,9 +8,13 @@
                 <h3 class="tagline">Spend smarter Save more</h3>
             </div>
             
-            <router-link to="/login" custom v-slot="{ navigate }">
+            <!-- <router-link to="/login" custom v-slot="{ navigate }">
                     <button id="start" @click="navigate">get started</button>
-            </router-link>
+                </router-link> -->
+                <router-link to="/login">
+                    <button id="start">get started</button>
+                </router-link>
+                <!-- <router-link id="start" to="/login" tag="button" >get started</router-link> -->
         </div>
     </body>
 </template>

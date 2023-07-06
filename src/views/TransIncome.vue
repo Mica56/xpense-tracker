@@ -10,7 +10,6 @@
                     <font-awesome-icon :icon="['fas', 'chevron-left']" style="color: #ffffff;"/>
                 </router-link>
                 <span style="flex: 1; text-align: center; font-size: large;">Transaction Details</span>
-                <!-- <font-awesome-icon :icon="['fas', 'ellipsis-h']" style="color: #ffffff;float: right;"/> -->
             </p>  
             
         </div>
@@ -54,6 +53,7 @@
                     <span class="alignright"><b>₱ 420.69</b></span>
                     <div style="clear: both;"></div>
                 </div>
+                <!-- {{transDetails}} -->
             </div>
         </div>
         <NavMenu></NavMenu>
@@ -63,15 +63,28 @@
 
 <script>
 import NavMenu from '../components/navmenu.vue';
+
 export default {
     name: 'TransIncome',
     components: {
         NavMenu,
-    }
+    },
+    // data () {
+    //     return {
+    //         transDetails: []
+    //     }
+    // },
+    // methods: {
+    //     displayData (transData){
+    //         this.transDetails = transData;
+    //         console.log(this.transDetails);
+    //     }
+    // },
+    
 }
 </script>
 
-<style>
+<style scoped>
 .header {
     height: 190px;
     background-color: #429690;

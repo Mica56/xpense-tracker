@@ -10,9 +10,7 @@
                     <font-awesome-icon :icon="['fas', 'chevron-left']" class="back" style="color: #ffffff;float: left;"/>
               </router-link>
             <div class="foreground-text">
-
                 <span style="flex: 1; text-align: center; font-size: large;">Add Transaction</span>
-                <!-- <font-awesome-icon :icon="['fas', 'ellipsis-h']" style="color: #ffffff;float: right;"/> -->
             </div>
             </div>
 
@@ -218,40 +216,6 @@ export default {
     //     selectText.innerHTML = "";
     //     selectText.innerHTML += this.innerHTML;
     //     list.classList.toggle("hide");
-    // };
-    // }
-
-    // // FOR eXPENSE TYPE DROPDOWN
-    // var selectFieldExpense = document.getElementById("selectfield-expense");
-    // var selectTextExpense = document.getElementById("selecttext-expense");
-    // var optionsExpense = document.getElementsByClassName("options-expense");
-    // var listExpense = document.getElementById("list-expense");
-
-    // selectFieldExpense.onclick = function () {
-    // listExpense.classList.toggle("hide1");
-    // }
-
-    // for (option of optionsExpense) {
-    // option.onclick = function () {
-    //     selectTextExpense.innerHTML = this.innerHTML;
-    //     listExpense.classList.toggle("hide1");
-    // };
-    // }
-
-    // // FOR TRANSACTION TYPE DROPDOWN
-    // var selectFieldTransaction = document.getElementById("selectfield-transaction");
-    // var selectTextTransaction = document.getElementById("selecttext-transaction");
-    // var optionsTransaction = document.getElementsByClassName("options-transaction");
-    // var listTransaction = document.getElementById("list-transaction");
-
-    // selectFieldTransaction.onclick = function () {
-    // listTransaction.classList.toggle("hide2");
-    // }
-
-    // for (option of optionsTransaction) {
-    // option.onclick = function () {
-    //     selectTextTransaction.innerHTML = this.innerHTML;
-    //     listTransaction.classList.toggle("hide2");
     // };
     // }
 };

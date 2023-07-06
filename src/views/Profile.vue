@@ -47,7 +47,9 @@
                     </p>
                 </router-link>
             </div>
-            <NavMenu></NavMenu>
+            <div id="prof-nav">
+              <NavMenu></NavMenu>
+            </div>
         </div>
     </body> 
   </div>
@@ -64,7 +66,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .back {
     position: absolute;
     margin-top: 65px;
@@ -72,7 +74,6 @@ export default {
     padding: 10px;
     z-index: 1;
 }
-
 .foreground-text {
     position: relative;
     display: flex;
@@ -98,11 +99,14 @@ export default {
   font-weight: bold;
 }
 
-.fa-home {
+</style>
+
+<style>
+#prof-nav .fa-home {
   color: #AAAAAA
 }
 
-.fa-user {
+#prof-nav .fa-user {
   color: #549994;
 }
 </style>
