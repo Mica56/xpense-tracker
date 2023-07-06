@@ -3,30 +3,33 @@
     <body>
         <div class="container">
             <div class="header">
-                <div class="circle"></div>
-                <div class="circle1"></div>
-                <div class="circle2"></div>
-                <div class="greetingText">
-                    <span style="font-size: small;">Good afternoon,</span><br>
-                    <span style="font-size: larger;"><b>Nikkun</b></span>
-                </div>
+            <div class="circle"></div>
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+            <div class="greetingText">
+                <span style="font-size: small;">Good afternoon,</span><br>
+                <span style="font-size: larger;"><b>Misty Williams</b></span>
             </div>
 
-            <div class="mainbody">
-                <div class="TransactionHistory">
-                    <div class="List">
-                        <p>
-                            <b>Transaction History</b>
-                        </p>
-                        <button class="seeMoreBtn">See all</button>
-                    </div>
-                    <!-- <div class="Transaction">
-                        <span style="display:inline-flex; align-items:center; gap:9px;">
-                            <img src="../assets/images/upwork-logo.png" alt="logo1">
-                            <span class="translabel">
-                                <label class="transname">Upwork</label>
-                                <label class="transdate">Today</label>
-                            </span>
+        </div>
+
+
+        <div class="mainbody">
+            <div class="List">
+                    
+                        <b>Transaction History</b>
+                
+                    <button class="seeMoreBtn">See all</button>
+                    
+                </div>
+            <div class="TransactionHistory">
+                
+                <!-- <div class="Transaction">
+                    <span style="display:inline-flex; align-items:center; gap:9px;">
+                        <img src="../assets/images/upwork-logo.png" alt="logo1">
+                        <span class="translabel">
+                            <label class="transname">Upwork</label>
+                            <label class="transdate">Today</label>
                         </span>
                         <label class="transamt">+₱850.00</label>
                     </div> -->
@@ -126,6 +129,10 @@ export default {
 </script>
 
 <style>
+* {
+    font-family: 'Poppins';
+}
+
 .fa-home {
     color: #549994;
 }
