@@ -15,7 +15,7 @@
             </div>
 
             <div class="main-body">
-            <div class="add-transaction">
+              <div class="add-transaction">
                 <form class="gform pure-form pure-form-stacked" method="POST" data-email="" @submit.prevent="createTransaction" action="https://script.google.com/macros/s/AKfycbwxUrtZCfje7pLaoUG_ENSe_w7N6K0XfYxry1Nsr0qcc-h49p2ZRslWkkukWlW8T_5u/exec">
                 <label>Name</label>
                 <input type="text" class="inputfield" placeholder="Enter name" id="input-name" name="input-name">
@@ -88,7 +88,6 @@
                 </form>
               </div>
             </div>
-            <NavMenu></NavMenu>
         </div>
     </body> 
     
@@ -223,6 +222,11 @@ export default {
 </script>
 
 <style scoped>
+    .main-body {
+      width: 100%;
+      height: 100%;
+      background-color: #ffffff;
+    }
 
     .back {
       position: absolute;

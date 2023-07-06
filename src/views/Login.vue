@@ -2,16 +2,11 @@
   <div>
     <body>
         <div class="container">
-            <div class="header">
-                <div class="circle"></div>
-                <div class="circle1"></div>
-                <div class="circle2"></div>
-                <h3 id="apptitle">ExpenseTrack</h3>
-            </div>
+            
 
             <div class="mainbody">
                 <div class="LoginBox">
-                    <h1 class="LoginText">Login</h1>
+                    <h1 class="LoginText">ExpenseTrack</h1>
                     <form method="post">
                         <div class="txt_field">
                             <input type="text" required>
@@ -44,8 +39,20 @@ export default {
 * {
     font-family: 'Poppins';
 }
-.container #login {
-    width: 414px;
+.mainbody {
+    background-color: #2F7E79;
+}
+
+.headers {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#login {
+    width: 100%;
     height: 896px;
     margin: 0 auto;
     position: relative;
@@ -55,12 +62,10 @@ export default {
 }
 
 #apptitle {
-    text-align: center;
     font-weight: 700;
     font-size: 48px;
     line-height: 61px;
     color: #ffffff;
-    padding: 80px 0px;
 }
 
 input[type="submit"]{
