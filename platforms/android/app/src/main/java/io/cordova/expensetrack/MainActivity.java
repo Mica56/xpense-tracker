@@ -17,7 +17,7 @@
        under the License.
  */
 
-package io.cordova.hellocordova;
+package io.cordova.expensetrack;
 
 import android.os.Bundle;
 

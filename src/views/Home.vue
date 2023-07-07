@@ -1,12 +1,13 @@
 <template>
-  <div>
-    <body>
-        <div class="container">
-            <div class="header">
+    <div>
+      <body>
+        <div class="home-container">
+          <div class="header">
             <div class="circle"></div>
             <div class="circle1"></div>
             <div class="circle2"></div>
             <div class="greetingText">
+
                 <router-link to="/login" style="text-decoration: none;color: inherit;">
                     <span style="font-size: larger;float: right;"><b>Logout</b>&nbsp;<font-awesome-icon :icon="['fas', 'sign-out-alt']" style="color: #ffffff;"/></span>
                 </router-link>
@@ -42,6 +43,7 @@
                         <span style="font-size: large;"><b>₱ {{ totalCredit }} </b></span>
                     </div>
                 </div>
+              </div>
             </div>
             <div class="TransactionHistory">
                 
@@ -91,23 +93,26 @@
                     <button class="newTransactionButton"><span class="plus">+</span></button>
                 </router-link>
             </div>
-            
-            
-            <NavMenu></NavMenu>
+            <div class=""></div>
+            <router-link to="/addtransact">
+              <button class="newTransactionButton"><span class="plus">+</span></button>
+            </router-link>
+          </div>
+  
+          <NavMenu></NavMenu>
         </div>
-        
-    </body>
-  </div>
-</template>
-
-<script>
-import axios from 'axios';
-import NavMenu from '../components/navmenu.vue';
-
-export default {
+      </body>
+    </div>
+  </template>
+  
+  <script>
+  import axios from 'axios';
+  import NavMenu from '../components/navmenu.vue';
+  
+  export default {
     name: 'Home',
     components: {
-        NavMenu,
+      NavMenu,
     },
     data () {
       return {
@@ -179,13 +184,48 @@ export default {
 <style>
 * {
     font-family: 'Poppins';
-}
-
-.fa-home {
+  }
+  
+  .home-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+  }
+  
+  #home {
+    display: flex;
+    background-color: #ffffff;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+  }
+  
+  .transactionHistory {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    top: 400px;
+    justify-content: space-between;
+    background-color: #ffffff;
+    transform: translate(0%, 0%);
+    overflow:hidden; 
+    overflow-y:scroll;
+    z-index: 1;
+  }
+  
+  .fa-home {
     color: #549994;
-}
-
-.fa-user {
-  color: #AAAAAA;
-}
-</style>
+  }
+  
+  .fa-user {
+    color: #AAAAAA;
+  }
+  </style>
+  
