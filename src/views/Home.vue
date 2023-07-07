@@ -10,8 +10,8 @@
               <router-link to="/login" style="text-decoration: none;color: inherit;">
                 <span style="font-size: larger;float: right;"><font-awesome-icon :icon="['fas', 'sign-out-alt']" style="color: #ffffff;"/></span>
               </router-link>
-              <span style="font-size: small;">Good afternoon,</span><br>
-              <span style="font-size: larger;"><b>Misty Williams</b></span>
+              <span style="font-size: small;">Hello User!</span><br>
+              <!--<span style="font-size: larger;"><b>Misty Williams</b></span> -->
             </div>
           </div>
   
@@ -119,7 +119,6 @@
           this.rows = response.data
         })
       },
-
       redirectRead (e) {
         if (e.transaction_type === 'Credit') {
               this.$router.push({
@@ -186,5 +185,7 @@
   .fa-user {
     color: #AAAAAA;
   }
+
 </style>
   
+
