@@ -3,7 +3,7 @@
     <body>
         
         <router-link class="fill-link" to="/onboard">
-            <div class="container">
+            <div class="landing-container">
                 <div id="landing">     
                     <h1 id="apptitle">ExpenseTrack</h1>
                 </div>
@@ -15,11 +15,24 @@
   </div>
 </template>
 
+
+<script>
+export default {
+  mounted() {
+    setTimeout(() => {
+      this.$router.push('/onboard');
+    }, 3000);
+  }
+}
+</script>
+
+<!--
 <script>
 export default {
     name: "LandingPage",
 }
 </script>
+-->
 
 <style>
 .fill-link{
@@ -28,8 +41,11 @@ export default {
     text-decoration: none;
 }
 
-.container{
-    background-color: #2A7C76;
+.landing-container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #2A7C76 !important;
 }
 
 #landing {
