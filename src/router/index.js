@@ -1,13 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Landing from '@/views/landing.vue'
-// import Onboarding from '../views/Onboard.vue'
-// import Login from '../views/Login.vue'
-// import Home from '../views/Home.vue'
-// import Profile from '../views/Profile.vue'
-// import AddTransact from '../views/AddTransact.vue'
-// import TransExpense from '../views/TransExpense.vue'
-// import TransIncome from '../views/TransIncome.vue'
 
 Vue.use(Router)
 

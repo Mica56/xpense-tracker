@@ -20,37 +20,37 @@
               <div class="balanceInfo">
                 <span class="totalBalance">Account Balance</span>
                 <br>
-              <span style="font-size: x-large;"><b>₱ {{ totalBalance }}</b></span>
+                <span style="font-size: x-large;"><b>₱ {{ totalBalance }}</b></span>
               </div>
               <div class="IncomeExpenses">
-                <div class="incomeText">
-                  <span style="font-size: small;">Income</span>
-                  <br>
-                <span style="font-size: large;"><b>₱ {{ totalDebit }}</b></span>
+                    <div class="incomeText">
+                        <span style="font-size: small;">Income / Debit</span>
+                        <br>
+                        <span style="font-size: large;"><b>₱ {{ totalDebit }} </b></span>
+                    </div>
+                    <div class="expenseText">
+                        <span style="font-size: small;">Expenses / Credit</span>
+                        <br>
+                        <span style="font-size: large;"><b>₱ {{ totalCredit }} </b></span>
+                    </div>
                 </div>
-                <div class="expenseText">
-                  <span style="font-size: small;">Expenses</span>
-                  <br>
-                <span style="font-size: large;"><b>₱ {{ totalCredit }}</b></span>
-                </div>
-              </div>
             </div>
             <div class="List">
               <b>Transaction History</b>
             </div>
-            <div class="transactionHistory">
-              <div class="Transaction" v-for="row in rows" :key="row.index" @click="redirectRead(row)">
-                <span style="display:inline-flex; align-items:center; gap:9px;">
-                  <img src="../assets/images/upwork-logo.png" alt="logo1">
-                  <span class="translabel">
-                    <label class="transname">{{ row['input-name'] }}</label>
-                    <label class="transdate">{{ row['input-date'] }}</label>
-                  </span>
-                </span>
+            <div class="TransactionHistory">
+                <div class="Transaction" v-for="row in rows" :key="row.index" @click="redirectRead(row)">
+                    <span style="display:inline-flex; align-items:center; gap:9px;">
+                            <img src="../assets/images/upwork-logo.png" alt="logo1">
+                            <span class="translabel">
+                                <label class="transname">{{ row['input-name'] }}</label>
+                                <label class="transdate">{{ row['input-date'] }}</label>
+                            </span>
+                    </span>
 
-                <label class="transamt" v-if="row.transaction_type === 'Debit' ">+₱ {{ row['price-input'] }}</label>
-                <label class="transamt" v-else style="color:#FF0000">-₱ {{ row['price-input'] }}</label>
-              </div>
+                    <label class="transamt" v-if="row.transaction_type === 'Debit' ">+₱ {{ row['price-input'] }}</label>
+                    <label class="transamt" v-else style="color:#FF0000">-₱ {{ row['price-input'] }}</label>
+                </div>
             </div>
             <div class=""></div>
             <router-link to="/addtransact">
