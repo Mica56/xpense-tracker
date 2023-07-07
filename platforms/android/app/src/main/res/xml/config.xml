@@ -12,6 +12,7 @@
     <content src="index.html" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
+<<<<<<< HEAD
     <resources>
         <color name="background">#2A7C76</color>
     </resources>
@@ -27,5 +28,8 @@
     <splash density="port-xhdpi" src="res/screen/android/splash-screen-port-xhdpi.png" />
     <splash density="port-xxhdpi" src="res/screen/android/splash-screen-port-xxhdpi.png" />
     <splash density="port-xxxhdpi" src="res/screen/android/splash-screen-port-xxxhdpi.png" />
+=======
+    <icon src="./src/assets/images/app-logo.png" />
+>>>>>>> 1fb831be6d6a2a5a579d6f795ce39b7c1982021f
     <preference name="loglevel" value="DEBUG" />
 </widget>
