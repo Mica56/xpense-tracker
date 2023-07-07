@@ -91,18 +91,18 @@ export default {
     margin-right: 20px;
 }
 
-.mainbody{
+/* .mainbody{
     padding: 50px 0;
     position: absolute;
-    width: 414px;
-    height: 550px;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
     left: 0px;
     top: 165px;
 
-    background: #FFFFFF;
     border-radius: 30px 30px 0px 0px;
     overflow: hidden !important;
-}
+} */
 .fa-home {
     color: #549994;
 }

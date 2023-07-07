@@ -106,10 +106,13 @@ export default {
     return {
         selected_ET: null,
         optionsExpense: [
-            {"value": 'A', "name": "Food"},
-            {"value": 'B', "name": "Transfer Payments"},
-            {"value": 'C', "name": "Travel Expenses"},
-            {"value": 'D', "name": "Load Transaction"},
+            {"value": 'A', "name": "Gcash Cash In"},
+            {"value": 'B', "name": "Salary"},
+            {"value": 'C', "name": "Money Transfer"},
+            {"value": 'D', "name": "Food"},
+            {"value": 'E', "name": "Transfer Payments"},
+            {"value": 'F', "name": "Travel Expenses"},
+            {"value": 'G', "name": "Load Transaction"},
         ],
         selected_TT: null,
         optionsTransact: [
