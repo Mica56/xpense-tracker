@@ -7,91 +7,50 @@
             <div class="circle1"></div>
             <div class="circle2"></div>
             <div class="greetingText">
-
-                <router-link to="/login" style="text-decoration: none;color: inherit;">
-                    <span style="font-size: larger;float: right;"><b>Logout</b>&nbsp;<font-awesome-icon :icon="['fas', 'sign-out-alt']" style="color: #ffffff;"/></span>
-                </router-link>
-                <span style="font-size: small;">Hello User!</span><br>
-                <!--<span style="font-size: larger;"><b>Misty Williams</b></span> -->
-                
+              <router-link to="/login" style="text-decoration: none;color: inherit;">
+                <span style="font-size: larger;float: right;"><font-awesome-icon :icon="['fas', 'sign-out-alt']" style="color: #ffffff;"/></span>
+              </router-link>
+              <span style="font-size: small;">Hello User!</span><br>
+              <!--<span style="font-size: larger;"><b>Misty Williams</b></span> -->
             </div>
-
-        </div>
-
-
-        <div class="mainbody">
-            <div class="List">
-                <b>Transaction History</b>
-                <!-- <button class="seeMoreBtn">See all</button>         -->
-            </div>
-            <div class="box">
-                <div class="balanceInfo">
-                    <span class="totalBalance">Total Balance</span>
-                    <!-- <font-awesome-icon :icon="['fas', 'ellipsis-h']" style="color: #ffffff;float: right;"/> -->
-                    <br>
-                    <span style="font-size: x-large;"><b>₱ {{ totalBalance }}</b></span>
+          </div>
+  
+          <div id="home">
+            <div class="account-balance">
+              <div class="balanceInfo">
+                <span class="totalBalance">Account Balance</span>
+                <br>
+              <span style="font-size: x-large;"><b>₱ {{ totalBalance }}</b></span>
+              </div>
+              <div class="IncomeExpenses">
+                <div class="incomeText">
+                  <span style="font-size: small;">Income</span>
+                  <br>
+                <span style="font-size: large;"><b>₱ {{ totalDebit }}</b></span>
                 </div>
-                <div class="IncomeExpenses">
-                    <div class="incomeText">
-                        <span style="font-size: small;">Income / Debit</span>
-                        <br>
-                        <span style="font-size: large;"><b>₱ {{ totalDebit }} </b></span>
-                    </div>
-                    <div class="expenseText">
-                        <span style="font-size: small;">Expenses / Credit</span>
-                        <br>
-                        <span style="font-size: large;"><b>₱ {{ totalCredit }} </b></span>
-                    </div>
+                <div class="expenseText">
+                  <span style="font-size: small;">Expenses</span>
+                  <br>
+                <span style="font-size: large;"><b>₱ {{ totalCredit }}</b></span>
                 </div>
               </div>
             </div>
-            <div class="TransactionHistory">
-                
-                <!-- <div class="Transaction">
-                    <span style="display:inline-flex; align-items:center; gap:9px;">
-                        <img src="../assets/images/upwork-logo.png" alt="logo1">
-                        <span class="translabel">
-                            <label class="transname">Upwork</label>
-                            <label class="transdate">Today</label>
-                        </span>
-                        <label class="transamt">+₱850.00</label>
-                    </div> -->
-                    
-                    <!-- when clicked, it should direct and passed the row data to transexpense/transincome view-->
-                    <div class="Transaction" v-for="row in rows" :key="row.index" @click="redirectRead(row)">
-                        <span style="display:inline-flex; align-items:center; gap:9px;">
-                                <img src="../assets/images/upwork-logo.png" alt="logo1">
-                                <span class="translabel">
-                                    <label class="transname">{{ row['input-name'] }}</label>
-                                    <label class="transdate">{{ row['input-date'] }}</label>
-                                </span>
-                        </span>
+            <div class="List">
+              <b>Transaction History</b>
+            </div>
+            <div class="transactionHistory">
+              <div class="Transaction" v-for="row in rows" :key="row.index" @click="redirectRead(row)">
+                <span style="display:inline-flex; align-items:center; gap:9px;">
+                  <img src="../assets/images/upwork-logo.png" alt="logo1">
+                  <span class="translabel">
+                    <label class="transname">{{ row['input-name'] }}</label>
+                    <label class="transdate">{{ row['input-date'] }}</label>
+                  </span>
+                </span>
 
-                        <label class="transamt" v-if="row.transaction_type === 'Debit' ">+₱ {{ row['price-input'] }}</label>
-                        <label class="transamt" v-else style="color:#FF0000">-₱ {{ row['price-input'] }}</label>
-                    </div>
-                    <!--
-                    <div class="Transaction>
-                        <span style="display:inline-flex; align-items:center; gap:9px;">
-                            <img src="../assets/images/youtube-logo.png" alt="logo1">
-                            <span class="translabel">
-                                <label class="transname">Youtube</label>
-                                <label class="transdate">Jan 16, 2022</label>
-                            </span>
-                        </span>
-                        <label class="transamt">-₱120.99</label>
-                    </div>
-                    -->
-                </div>
-                
-                <!-- <router-link to="/addtransact" custom v-slot="{ navigate }">
-                    <button class="newTransactionButton" @click="navigate">
-                        <span class="plus">+</span>
-                    </button>
-                </router-link> -->
-                <router-link to="/addtransact">
-                    <button class="newTransactionButton"><span class="plus">+</span></button>
-                </router-link>
+                <label class="transamt" v-if="row.transaction_type === 'Debit' ">+₱ {{ row['price-input'] }}</label>
+                <label class="transamt" v-else style="color:#FF0000">-₱ {{ row['price-input'] }}</label>
+              </div>
             </div>
             <div class=""></div>
             <router-link to="/addtransact">
