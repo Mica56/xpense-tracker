@@ -17,16 +17,12 @@
 
         <div class="mainbody">
             <div class="TransactionLogo">
-                <img src="../assets/images/Logo2.png">
+                <img src="../assets/images/upwork-logo.png">
             </div>
-            <div class="TransactionType">
-                <span style="font-size: small; color: #F95B51;"><b>Expense</b></span>
-            </div>
-            <h2 class="Amount">₱ 263.99</h2>
             <div class="TransactionInfo">
                 <p>
-                    <span style="margin-right: 175px; font-size: medium;"><b>Transaction Details</b></span>
-                    <font-awesome-icon :icon="['fas', 'chevron-up']" style="color: #000000;"/>
+                    <span style="font-size: medium;display:flex;justify-content: center;"><b>Transaction Details</b></span>
+                    <!-- <font-awesome-icon :icon="['fas', 'chevron-up']" style="color: #000000;"/> -->
                 </p>
                 <div class="Status">
                     <span class="alignleft">Status</span>
@@ -81,28 +77,21 @@ export default {
     padding: 20px;
 }
 .foreground-text {
-    position: relative;
-    margin: 2rem;
-    display: flex;
-    align-items: center;
-}
+      position: relative;
+      display: flex;
+      align-items: center;
+      margin-top: 60px;
+      padding: 10px;
+    }
 
-.foreground-text font-awesome-icon {
-    margin-right: 20px;
-}
-
-/* .mainbody{
+.mainbody {
     padding: 50px 0;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: #ffffff;
-    left: 0px;
     top: 165px;
-
+    position: absolute;
+    text-align: left;
     border-radius: 30px 30px 0px 0px;
     overflow: hidden !important;
-} */
+}
 .fa-home {
     color: #549994;
 }

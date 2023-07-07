@@ -546,12 +546,14 @@ form label {
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background-color: #b8b8b8;
+  background-color: whitesmoke;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   position: absolute;
-  top: 12%;
+  top: 8%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
+  /* z-index: auto; */
 }
 .TransactionLogo img {
   width: 100%;
@@ -560,26 +562,30 @@ form label {
   border-radius: 50%;
 }
 
-.TransactionType {
-  position: relative;
+/* .TransactionType {
+  position: absolute;
+  text-align: left;
+  justify-content: center;
   top: 15%;
   left: 50%;
   transform: translate(-50%, 0%);
-  text-align: center;
 }
 
 .Amount {
-  position: relative;
+  position: absolute;
+  text-align: left;
+  justify-content: center;
   top: 12%;
   left: 50%;
   transform: translate(-50%, 0%);
   padding: 20px;
-  text-align: center;
-}
+} */
 
 .TransactionInfo {
-  position: relative;
-  top: 5%;
+  position: absolute;
+  text-align: left;
+  justify-content: center;
+  top: 12%;
   left: 50%;
   transform: translate(-50%, 0%);
   padding: 30px;
