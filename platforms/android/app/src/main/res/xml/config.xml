@@ -1,5 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.cordova.hellocordova" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="io.cordova.expensetrack" version="1.0.0" xmlns="http://www.w3.org/ns/widgets">
+    <feature name="SplashScreen">
+        <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
+        <param name="onload" value="true" />
+    </feature>
     <name>Xpense Tracker</name>
     <description>Xpense Tracker - A cordova-vue project</description>
     <author email="tayotomichael18@gmail.com" href="https://github.com/Mica56">
@@ -8,6 +12,20 @@
     <content src="index.html" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
-    <icon src="./src/assets/images/app-logo.png" />
+    <resources>
+        <color name="background">#2A7C76</color>
+    </resources>
+    <icon density="ldpi" src="res/icon/android/app-logo-ldpi.png" />
+    <icon density="mdpi" src="res/icon/android/app-logo-mdpi.png" />
+    <icon density="hdpi" src="res/icon/android/app-logo-hdpi.png" />
+    <icon density="xhdpi" src="res/icon/android/app-logo-xhdpi.png" />
+    <icon density="xxhdpi" src="res/icon/android/app-logo-xxhdpi.png" />
+    <icon density="xxxhdpi" src="res/icon/android/app-logo-xxxhdpi.png" />
+    <splash density="port-hdpi" src="res/screen/android/splash-screen-port-hdpi.png" />
+    <splash density="port-ldpi" src="res/screen/android/splash-screen-port-ldpi.png" />
+    <splash density="port-mdpi" src="res/screen/android/splash-screen-port-mdpi.png" />
+    <splash density="port-xhdpi" src="res/screen/android/splash-screen-port-xhdpi.png" />
+    <splash density="port-xxhdpi" src="res/screen/android/splash-screen-port-xxhdpi.png" />
+    <splash density="port-xxxhdpi" src="res/screen/android/splash-screen-port-xxxhdpi.png" />
     <preference name="loglevel" value="DEBUG" />
 </widget>

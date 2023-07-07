@@ -1,5 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.cordova.hellocordova" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<!-- <widget id="io.cordova.hellocordova" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0"> -->
+<widget id="io.cordova.expensetrack" version="1.0.0">
+    <!-- <icon src="res/icon/android/app-logo.png" /> -->
     <name>Xpense Tracker</name>
     <description>Xpense Tracker - A cordova-vue project</description>
     <author email="tayotomichael18@gmail.com" href="https://github.com/Mica56">
@@ -8,5 +10,29 @@
     <content src="index.html" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
-    <icon src="./src/assets/images/app-logo.png" />
+    <platform name="android">
+        
+        <icon src="res/icon/android/app-logo-ldpi.png" density="ldpi" />
+        <icon src="res/icon/android/app-logo-mdpi.png" density="mdpi" />
+        <icon src="res/icon/android/app-logo-hdpi.png" density="hdpi" />
+        <icon src="res/icon/android/app-logo-xhdpi.png" density="xhdpi" />
+        <icon src="res/icon/android/app-logo-xxhdpi.png" density="xxhdpi" />
+        <icon src="res/icon/android/app-logo-xxxhdpi.png" density="xxxhdpi" />
+        <!-- Default -->
+        <!-- <preference name="AndroidWindowSplashScreenAnimatedIcon" value="res/screen/android/splashscreen.xml" /> -->
+
+        <!-- <splash src="res/screen/android/splash-land-hdpi.png" density="land-hdpi" />
+        <splash src="res/screen/android/splash-land-ldpi.png" density="land-ldpi" />
+        <splash src="res/screen/android/splash-land-mdpi.png" density="land-mdpi" />
+        <splash src="res/screen/android/splash-land-xhdpi.png" density="land-xhdpi" />
+        <splash src="res/screen/android/splash-land-xxhdpi.png" density="land-xxhdpi" />
+        <splash src="res/screen/android/splash-land-xxxhdpi.png" density="land-xxxhdpi" /> -->
+
+        <splash src="res/screen/android/splash-screen-port-hdpi.png" density="port-hdpi" />
+        <splash src="res/screen/android/splash-screen-port-ldpi.png" density="port-ldpi" />
+        <splash src="res/screen/android/splash-screen-port-mdpi.png" density="port-mdpi" />
+        <splash src="res/screen/android/splash-screen-port-xhdpi.png" density="port-xhdpi" />
+        <splash src="res/screen/android/splash-screen-port-xxhdpi.png" density="port-xxhdpi" />
+        <splash src="res/screen/android/splash-screen-port-xxxhdpi.png" density="port-xxxhdpi" /> 
+    </platform>
 </widget>
