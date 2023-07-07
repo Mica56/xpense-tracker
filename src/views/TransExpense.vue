@@ -26,28 +26,33 @@
                 </p>
                 <div class="Status">
                     <span class="alignleft">Status</span>
-                    <span class="alignright" style="color: #F95B51;"><b>Expense</b></span>
+                    <span class="alignright" style="color: #F95B51;"><b>Expense  / Credit</b></span>
                     <div style="clear: both;"></div>
                 </div>
                 <div class="From">
-                    <span class="alignleft">To</span>
-                    <span class="alignright">Discord</span>
+                    <span class="alignleft">Transaction Name</span>
+                    <span class="alignright">{{ transDetails['input-name'] }} </span>
+                    <div style="clear: both;"></div>
+                </div>
+                <div class="From">
+                    <span class="alignleft">Transaction Type</span>
+                    <span class="alignright">{{ transDetails['expense_type'] }} </span>
                     <div style="clear: both;"></div>
                 </div>
                 <div class="Time">
                     <span class="alignleft">Time</span>
-                    <span class="alignright">3:00 AM</span>
+                    <span class="alignright">{{ detailTime }}</span>
                     <div style="clear: both;"></div>
                 </div>
                 <div class="Date">
                     <span class="alignleft">Date</span>
-                    <span class="alignright">March 3, 2022</span>
+                    <span class="alignright"> {{ detailDate }}</span>
                     <div style="clear: both;"></div>
                 </div>
-                <hr style="width:350px;">
+                <hr style="width:350px">
                 <div class="Earnings">
-                    <span class="alignleft">Spendings</span>
-                    <span class="alignright"><b>₱ 263.99</b></span>
+                    <span class="alignleft">Earnings</span>
+                    <span class="alignright"><b>₱ {{ transDetails['price-input'] }} </b></span>
                     <div style="clear: both;"></div>
                 </div>
             </div>
@@ -63,7 +68,27 @@ export default {
     name: 'TransExpense',
     components: {
         NavMenu,
-    }
+    },
+    data () {
+        return {
+          transDetails: {}
+         }
+     },
+     mounted () {
+      this.transDetails = this.$route.params.data
+     },
+     computed: {
+       detailDate () {
+        const dateObj = new Date(this.transDetails['input-date'])
+
+        return dateObj.toDateString()
+        },
+        detailTime () {
+          const dateObj = new Date(this.transDetails['input-date'])
+
+          return dateObj.toLocaleTimeString() 
+        }
+     },
 }
 </script>
 

@@ -10,8 +10,8 @@
                 <router-link to="/login" style="text-decoration: none;color: inherit;">
                     <span style="font-size: larger;float: right;"><b>Logout</b>&nbsp;<font-awesome-icon :icon="['fas', 'sign-out-alt']" style="color: #ffffff;"/></span>
                 </router-link>
-                <span style="font-size: small;">Good afternoon,</span><br>
-                <span style="font-size: larger;"><b>Misty Williams</b></span>
+                <span style="font-size: small;">Hello User!</span><br>
+                <!--<span style="font-size: larger;"><b>Misty Williams</b></span> -->
                 
             </div>
 
@@ -28,18 +28,18 @@
                     <span class="totalBalance">Total Balance</span>
                     <!-- <font-awesome-icon :icon="['fas', 'ellipsis-h']" style="color: #ffffff;float: right;"/> -->
                     <br>
-                    <span style="font-size: x-large;"><b>₱100,000.00</b></span>
+                    <span style="font-size: x-large;"><b>₱ {{ totalBalance }}</b></span>
                 </div>
                 <div class="IncomeExpenses">
                     <div class="incomeText">
-                        <span style="font-size: small;">Income</span>
+                        <span style="font-size: small;">Income / Debit</span>
                         <br>
-                        <span style="font-size: large;"><b>₱500.00</b></span>
+                        <span style="font-size: large;"><b>₱ {{ totalDebit }} </b></span>
                     </div>
                     <div class="expenseText">
-                        <span style="font-size: small;">Expenses</span>
+                        <span style="font-size: small;">Expenses / Credit</span>
                         <br>
-                        <span style="font-size: large;"><b>₱22,000.55</b></span>
+                        <span style="font-size: large;"><b>₱ {{ totalCredit }} </b></span>
                     </div>
                 </div>
             </div>
@@ -56,7 +56,7 @@
                     </div> -->
                     
                     <!-- when clicked, it should direct and passed the row data to transexpense/transincome view-->
-                    <div class="Transaction" v-for="row in rows" :key="row.index" v-on:click="clickedEvent()">
+                    <div class="Transaction" v-for="row in rows" :key="row.index" @click="redirectRead(row)">
                         <span style="display:inline-flex; align-items:center; gap:9px;">
                                 <img src="../assets/images/upwork-logo.png" alt="logo1">
                                 <span class="translabel">
@@ -64,10 +64,12 @@
                                     <label class="transdate">{{ row['input-date'] }}</label>
                                 </span>
                         </span>
-                        <label class="transamt">+₱ {{ row['price-input'] }}</label>
+
+                        <label class="transamt" v-if="row.transaction_type === 'Debit' ">+₱ {{ row['price-input'] }}</label>
+                        <label class="transamt" v-else style="color:#FF0000">-₱ {{ row['price-input'] }}</label>
                     </div>
                     <!--
-                    <div class="Transaction">
+                    <div class="Transaction>
                         <span style="display:inline-flex; align-items:center; gap:9px;">
                             <img src="../assets/images/youtube-logo.png" alt="logo1">
                             <span class="translabel">
@@ -115,6 +117,36 @@ export default {
     mounted () {
       this.pullLatestData()
     },
+    computed: {
+      totalBalance () {
+        let sum = 0;
+        this.rows.forEach ( (e) => {
+          sum += e['price-input']
+        });
+
+        return sum.toFixed(2)
+      },
+      totalCredit () {
+        let sum = 0;
+        this.rows.forEach ( (e) => {
+          if (e.transaction_type === 'Debit') {
+          sum += e['price-input']
+          }
+        });
+
+        return sum.toFixed(2)
+      },
+      totalDebit () {
+        let sum = 0;
+        this.rows.forEach ( (e) => {
+          if (e.transaction_type === 'Credit') {
+            sum += e['price-input']
+          }
+        });
+
+        return sum.toFixed(2)
+      }
+    },
     methods: {
       async pullLatestData () {
         axios.get('https://script.googleusercontent.com/macros/echo?user_content_key=x9TjYPnJBXtUIMepCpbAaXL_MZNoq8XoCrKN2UeodXzuTCh_omGNAYIBxERO1x1yqEvv7-rmZYCL6CXfO6CylpO_VfG8Lwtum5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnDqK8jVvBXp9fpjbyJP-wHDAwzk2lY8GtIG9xSFsYMcBRKZwNFLSXmEDt_icz4ystJVeNNTa_XY5uDfOU_W1phOUl5bkwRZ_jw&lib=M3Un0O6LJxLlY9N7wsRNDEi_nbiigEm_c')
@@ -123,11 +155,23 @@ export default {
           this.rows = response.data
         })
       },
-      clickedEvent () {
-        this.$router.push('/transincome');
-        // this.$emit('rowData', row);
-      }
-    },
+      redirectRead (e) {
+        if (e.transaction_type === 'Credit') {
+              this.$router.push({
+                name: "TransExpense",
+                params: {
+                  data: {...e}
+                }
+              })
+        }
+        else {
+            this.$router.push({
+              name: "TransIncome",
+              params: {data: {...e}}
+            })
+        }
+      },
+    }
 }
 
 </script>
