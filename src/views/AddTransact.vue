@@ -7,8 +7,8 @@
             <div class="circle1"></div> 
             <div class="circle2"></div>
             <router-link to="/home" style="text-decoration: none;color: inherit;">
-                    <font-awesome-icon :icon="['fas', 'chevron-left']" class="back" style="color: #ffffff;float: left;"/>
-              </router-link>
+                  <font-awesome-icon :icon="['fas', 'chevron-left']" class="back" style="color: #ffffff;float: left;"/>
+            </router-link>
             <div class="foreground-text">
                 <span style="flex: 1; text-align: center; font-size: large;">Add Transaction</span>
             </div>
