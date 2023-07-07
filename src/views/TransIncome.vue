@@ -25,28 +25,33 @@
                 </p>
                 <div class="Status">
                     <span class="alignleft">Status</span>
-                    <span class="alignright" style="color: #438883;"><b>Income</b></span>
+                    <span class="alignright" style="color: #438883;"><b>Income/ Debit</b></span>
                     <div style="clear: both;"></div>
                 </div>
                 <div class="From">
-                    <span class="alignleft">From</span>
-                    <span class="alignright">Hoshimachi Suisei</span>
+                    <span class="alignleft">Transaction Name</span>
+                    <span class="alignright">{{ transDetails['input-name'] }} </span>
+                    <div style="clear: both;"></div>
+                </div>
+                <div class="From">
+                    <span class="alignleft">Transaction Type</span>
+                    <span class="alignright">{{ transDetails['expense_type'] }} </span>
                     <div style="clear: both;"></div>
                 </div>
                 <div class="Time">
                     <span class="alignleft">Time</span>
-                    <span class="alignright">11:00 AM</span>
+                    <span class="alignright">{{ detailTime }}</span>
                     <div style="clear: both;"></div>
                 </div>
                 <div class="Date">
                     <span class="alignleft">Date</span>
-                    <span class="alignright">Feb 30, 2022</span>
+                    <span class="alignright"> {{ detailDate }}</span>
                     <div style="clear: both;"></div>
                 </div>
                 <hr style="width:350px">
                 <div class="Earnings">
                     <span class="alignleft">Earnings</span>
-                    <span class="alignright"><b>₱ 420.69</b></span>
+                    <span class="alignright"><b>₱ {{ transDetails['price-input'] }} </b></span>
                     <div style="clear: both;"></div>
                 </div>
                 <!-- {{transDetails}} -->
@@ -65,11 +70,26 @@ export default {
     components: {
         NavMenu,
     },
-    // data () {
-    //     return {
-    //         transDetails: []
-    //     }
-    // },
+    data () {
+        return {
+          transDetails: {}
+         }
+     },
+     mounted () {
+      this.transDetails = this.$route.params.data
+     },
+     computed: {
+       detailDate () {
+        const dateObj = new Date(this.transDetails['input-date'])
+
+        return dateObj.toDateString()
+        },
+        detailTime () {
+          const dateObj = new Date(this.transDetails['input-date'])
+
+          return dateObj.toLocaleTimeString() 
+        }
+     },
     // methods: {
     //     displayData (transData){
     //         this.transDetails = transData;

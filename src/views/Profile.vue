@@ -12,7 +12,7 @@
           <div class="foreground-text">
             <span style="flex: 1; text-align: center; font-size: large;">Profile</span>
             <router-link to="/login" style="text-decoration: none;color: inherit;">
-              <span><font-awesome-icon :icon="['fas', 'sign-out-alt']" style="color: #ffffff;float: right;"/></span>
+              <span style="font-size: larger;float: right;"><font-awesome-icon :icon="['fas', 'sign-out-alt']" style="color: #ffffff;float: right;"/></span>
             </router-link>
           </div>
         </div>
@@ -84,6 +84,25 @@ export default {
   z-index: 1;
 }
 
+.account-details {
+  transform: translate(0%, 5%);
+}
+
+.email, .number, .account-type {
+  color: #549994;
+  font-weight: bold;
+}
+
+#prof-nav .fa-home {
+  color: #AAAAAA
+}
+
+#prof-nav .fa-user {
+  color: #549994;
+}
+</style>
+
+<style scoped>
 .foreground-text {
   position: relative;
   display: flex;
@@ -105,22 +124,5 @@ export default {
   z-index: 1;
   background-color: #ffffff;
   transform: translate(0%, 0%);
-}
-
-.account-details {
-  transform: translate(0%, 5%);
-}
-
-.email, .number, .account-type {
-  color: #549994;
-  font-weight: bold;
-}
-
-#prof-nav .fa-home {
-  color: #AAAAAA
-}
-
-#prof-nav .fa-user {
-  color: #549994;
 }
 </style>

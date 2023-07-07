@@ -1,13 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Landing from '@/views/Landing.vue'
-// import Onboarding from '../views/Onboard.vue'
-// import Login from '../views/Login.vue'
-// import Home from '../views/Home.vue'
-// import Profile from '../views/Profile.vue'
-// import AddTransact from '../views/AddTransact.vue'
-// import TransExpense from '../views/TransExpense.vue'
-// import TransIncome from '../views/TransIncome.vue'
+import Landing from '@/views/landing.vue'
 
 Vue.use(Router)
 
@@ -21,7 +14,7 @@ export default new Router({
     {
       path: '/onboard',
       name: 'Onboarding',
-      component: () => import('../views/Onboard.vue'),
+      component: () => import('../views/onboard.vue'),
     },
     {
       path: '/login',
@@ -49,9 +42,10 @@ export default new Router({
       component: () => import('../views/TransExpense.vue'),
     },
     {
-      path: '/transincome',
+      path: '/transincome/',
       name: 'TransIncome',
       component: () => import('../views/TransIncome.vue'),
+      props: true,
     },
   ]
 })
