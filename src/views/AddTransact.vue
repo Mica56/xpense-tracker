@@ -14,7 +14,7 @@
             </div>
             </div>
 
-            <div class="main-body">
+            <div class="add-transaction-body">
               <div class="add-transaction">
                 <form class="gform pure-form pure-form-stacked" method="POST" data-email="" @submit.prevent="createTransaction" action="https://script.google.com/macros/s/AKfycbwxUrtZCfje7pLaoUG_ENSe_w7N6K0XfYxry1Nsr0qcc-h49p2ZRslWkkukWlW8T_5u/exec">
                 <label>Name</label>
@@ -225,7 +225,9 @@ export default {
 </script>
 
 <style scoped>
-    .main-body {
+    .add-transaction-body {
+      display: flex;
+      justify-content: center;
       width: 100%;
       height: 100%;
       background-color: #ffffff;
