@@ -38,30 +38,34 @@ export default {
         position:absolute;
         width: 100%;
         height: 100%;
-        background: url(../assets/images/onboard-bg1.png) no-repeat;
+        background: url(../assets/images/onboard-bg1.png);
+        background-repeat:no-repeat;
+        background-size: cover;
         text-align: center;
         justify-content: center;
     }
 
-    #coin{
-        position:relative;
-        width: 300px;
-        height: 300px;
-        float: left;
-        top: 50px;
-    }
+    #coin {
+        position: absolute;
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        margin: 0 auto;
+        left: 1%;
+        top: 2%;
+}
 
-    #donut{
-        position:relative;
-        width: 250px;
-        height: 300px;
+    #donut {
+        position: absolute;
+        width: 100%;
+        max-width: 250px;
+        height: auto;
         transform: rotate(-10deg);
-        top: -50px;
-        right: 30px;
-        float: right;
-        
-        
-    }
+        right: 8%;
+        bottom: 30%;
+        margin: 0 auto;
+}
+
     
     /* #onboard-upper{
         position: absolute;
@@ -75,23 +79,26 @@ export default {
 
     .tagline {
         position: absolute;
+        top: 75%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         width: 70%;
         height: 76px;
-        top: 68%;
-        left: 65px;
         font-weight: 700;
-        font-size: 36px;
+        font-size: clamp(2rem, 0.0439rem + 3.6952vw, 4rem);
         line-height: 38px;
         text-transform: capitalize;
         color: #438883;
-    }
+}
 
-    #start{
-        position: relative;
+
+    #start {
+        position: absolute;
+        left: 50%;
+        top: 90%;
+        transform: translate(-50%, -50%);
         width: 85%;
         height: 64px;
-        left: 30px;
-        top: 745px;
         border: none;
         background-color: #438883;
         border-radius: 40px;
@@ -101,11 +108,12 @@ export default {
         text-transform: capitalize;
         color: #FFFFFF;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    }
+}
 
     #start:hover {
         background-color: #f2f2f2;
         color: #429690;
-    }
+}
+
     
 </style>
