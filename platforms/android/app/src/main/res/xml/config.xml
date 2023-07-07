@@ -14,14 +14,5 @@
     <icon density="xhdpi" src="res/icon/android/app-logo-xhdpi.png" />
     <icon density="xxhdpi" src="res/icon/android/app-logo-xxhdpi.png" />
     <icon density="xxxhdpi" src="res/icon/android/app-logo-xxxhdpi.png" />
-<<<<<<< HEAD
-    <splash density="port-hdpi" src="res/screen/android/splash-screen-port-hdpi.png" />
-    <splash density="port-ldpi" src="res/screen/android/splash-screen-port-ldpi.png" />
-    <splash density="port-mdpi" src="res/screen/android/splash-screen-port-mdpi.png" />
-    <splash density="port-xhdpi" src="res/screen/android/splash-screen-port-xhdpi.png" />
-    <splash density="port-xxhdpi" src="res/screen/android/splash-screen-port-xxhdpi.png" />
-    <splash density="port-xxxhdpi" src="res/screen/android/splash-screen-port-xxxhdpi.png" />
-=======
->>>>>>> 208bc66f91c62643d2e542bc3ec8f479414b4e1e
     <preference name="loglevel" value="DEBUG" />
 </widget>
