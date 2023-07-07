@@ -27,11 +27,11 @@
         <splash src="res/screen/android/splash-land-xxhdpi.png" density="land-xxhdpi" />
         <splash src="res/screen/android/splash-land-xxxhdpi.png" density="land-xxxhdpi" /> -->
 
-        <splash src="res/screen/android/splash-screen-port-hdpi.png" density="port-hdpi" />
+        <!-- <splash src="res/screen/android/splash-screen-port-hdpi.png" density="port-hdpi" />
         <splash src="res/screen/android/splash-screen-port-ldpi.png" density="port-ldpi" />
         <splash src="res/screen/android/splash-screen-port-mdpi.png" density="port-mdpi" />
         <splash src="res/screen/android/splash-screen-port-xhdpi.png" density="port-xhdpi" />
         <splash src="res/screen/android/splash-screen-port-xxhdpi.png" density="port-xxhdpi" />
-        <splash src="res/screen/android/splash-screen-port-xxxhdpi.png" density="port-xxxhdpi" /> 
+        <splash src="res/screen/android/splash-screen-port-xxxhdpi.png" density="port-xxxhdpi" />  -->
     </platform>
 </widget>
