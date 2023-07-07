@@ -569,25 +569,6 @@ form label {
   border-radius: 50%;
 }
 
-/* .TransactionType {
-  position: absolute;
-  text-align: left;
-  justify-content: center;
-  top: 15%;
-  left: 50%;
-  transform: translate(-50%, 0%);
-}
-
-.Amount {
-  position: absolute;
-  text-align: left;
-  justify-content: center;
-  top: 12%;
-  left: 50%;
-  transform: translate(-50%, 0%);
-  padding: 20px;
-} */
-
 .TransactionInfo {
   position: absolute;
   text-align: left;
