@@ -8,5 +8,6 @@
     <content src="index.html" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
+    <icon src="./src/assets/images/app-logo.png" />
     <preference name="loglevel" value="DEBUG" />
 </widget>
