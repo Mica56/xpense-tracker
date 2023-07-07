@@ -43,7 +43,7 @@ export default {
 
 #apptitle {
     font-weight: 700;
-    font-size: 50px;
+    font-size: clamp(3rem, 0.0439rem + 3.6952vw, 5rem);
     line-height: 61px;
     color: #f5f5f5;
 }

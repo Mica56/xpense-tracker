@@ -7,15 +7,15 @@
             <div class="circle1"></div> 
             <div class="circle2"></div>
             <router-link to="/home" style="text-decoration: none;color: inherit;">
-                    <font-awesome-icon :icon="['fas', 'chevron-left']" class="back" style="color: #ffffff;float: left;"/>
-              </router-link>
+                  <font-awesome-icon :icon="['fas', 'chevron-left']" class="back" style="color: #ffffff;float: left;"/>
+            </router-link>
             <div class="foreground-text">
                 <span style="flex: 1; text-align: center; font-size: large;">Add Transaction</span>
             </div>
             </div>
 
             <div class="main-body">
-            <div class="add-transaction">
+              <div class="add-transaction">
                 <form class="gform pure-form pure-form-stacked" method="POST" data-email="" @submit.prevent="createTransaction" action="https://script.google.com/macros/s/AKfycbwxUrtZCfje7pLaoUG_ENSe_w7N6K0XfYxry1Nsr0qcc-h49p2ZRslWkkukWlW8T_5u/exec">
                 <label>Name</label>
                 <input type="text" class="inputfield" placeholder="Enter name" id="input-name" name="input-name">
@@ -88,7 +88,6 @@
                 </form>
               </div>
             </div>
-            <NavMenu></NavMenu>
         </div>
     </body> 
     
@@ -107,10 +106,13 @@ export default {
     return {
         selected_ET: null,
         optionsExpense: [
-            {"value": 'A', "name": "Food"},
-            {"value": 'B', "name": "Transfer Payments"},
-            {"value": 'C', "name": "Travel Expenses"},
-            {"value": 'D', "name": "Load Transaction"},
+            {"value": 'A', "name": "Gcash Cash In"},
+            {"value": 'B', "name": "Salary"},
+            {"value": 'C', "name": "Money Transfer"},
+            {"value": 'D', "name": "Food"},
+            {"value": 'E', "name": "Transfer Payments"},
+            {"value": 'F', "name": "Travel Expenses"},
+            {"value": 'G', "name": "Load Transaction"},
         ],
         selected_TT: null,
         optionsTransact: [
@@ -223,6 +225,11 @@ export default {
 </script>
 
 <style scoped>
+    .main-body {
+      width: 100%;
+      height: 100%;
+      background-color: #ffffff;
+    }
 
     .back {
       position: absolute;

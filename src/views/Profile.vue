@@ -11,13 +11,13 @@
                   </router-link>
                 <div class="foreground-text">
                     <span style="flex: 1; text-align: center; font-size: large;">Profile</span>
+                    <span><font-awesome-icon :icon="['fas', 'ellipsis-h']" style="color: #ffffff;float: right;"/></span>
                 </div>
             </div>
                     
             <div class="main-body">
-                <div class="avatar-profile">
-                    <img src="../assets/images/profile.png">
-                </div>
+                
+                <img class="avatar-profile" src="../assets/images/profile.png">
                 <h2 class="account-name">Misty Williams</h2>
                 <span class="username">@mistywilliams96</span>
                 <div class="profile">
@@ -87,11 +87,13 @@ export default {
 }
 
 .main-body {
-  padding: 50px 0;
-  overflow: hidden !important;
+  padding: 30px 0;
+  width: 100%;
+  height: 100%;
   text-align: center;
   z-index: auto;
   z-index: 1;
+  background-color: #ffffff;
 }
 
 .email, .number, .account-type {

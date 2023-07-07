@@ -20,9 +20,10 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import { faEllipsisH } from '@fortawesome/free-solid-svg-icons'
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons'
+import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
 
 /* add icons to the library */
-library.add(faUser, faHome, faChevronLeft, faHistory, faPlus, faEllipsisH, faChevronDown, faChevronUp)
+library.add(faUser, faHome, faChevronLeft, faHistory, faPlus, faEllipsisH, faChevronDown, faChevronUp, faSignOutAlt)
 
 /* add font awesome icon component */
 Vue.component('font-awesome-icon', FontAwesomeIcon)

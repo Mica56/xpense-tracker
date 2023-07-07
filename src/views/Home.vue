@@ -7,8 +7,12 @@
             <div class="circle1"></div>
             <div class="circle2"></div>
             <div class="greetingText">
+                <router-link to="/login" style="text-decoration: none;color: inherit;">
+                    <span style="font-size: larger;float: right;"><b>Logout</b>&nbsp;<font-awesome-icon :icon="['fas', 'sign-out-alt']" style="color: #ffffff;"/></span>
+                </router-link>
                 <span style="font-size: small;">Good afternoon,</span><br>
                 <span style="font-size: larger;"><b>Misty Williams</b></span>
+                
             </div>
 
         </div>
@@ -16,12 +20,29 @@
 
         <div class="mainbody">
             <div class="List">
-                    
-                        <b>Transaction History</b>
-                
-                    <button class="seeMoreBtn">See all</button>
-                    
+                <b>Transaction History</b>
+                <!-- <button class="seeMoreBtn">See all</button>         -->
+            </div>
+            <div class="box">
+                <div class="balanceInfo">
+                    <span class="totalBalance">Total Balance</span>
+                    <!-- <font-awesome-icon :icon="['fas', 'ellipsis-h']" style="color: #ffffff;float: right;"/> -->
+                    <br>
+                    <span style="font-size: x-large;"><b>₱100,000.00</b></span>
                 </div>
+                <div class="IncomeExpenses">
+                    <div class="incomeText">
+                        <span style="font-size: small;">Income</span>
+                        <br>
+                        <span style="font-size: large;"><b>₱500.00</b></span>
+                    </div>
+                    <div class="expenseText">
+                        <span style="font-size: small;">Expenses</span>
+                        <br>
+                        <span style="font-size: large;"><b>₱22,000.55</b></span>
+                    </div>
+                </div>
+            </div>
             <div class="TransactionHistory">
                 
                 <!-- <div class="Transaction">
@@ -58,38 +79,21 @@
                     </div>
                     -->
                 </div>
-                <router-link to="/addtransact">
-                    <button class="newTransactionButton"><span class="plus">+</span></button>
-                </router-link>
+                
                 <!-- <router-link to="/addtransact" custom v-slot="{ navigate }">
                     <button class="newTransactionButton" @click="navigate">
                         <span class="plus">+</span>
                     </button>
                 </router-link> -->
+                <router-link to="/addtransact">
+                    <button class="newTransactionButton"><span class="plus">+</span></button>
+                </router-link>
             </div>
             
-            <div class="box">
-                <div class="balanceInfo">
-                    <span class="totalBalance">Total Balance</span>
-                    <font-awesome-icon :icon="['fas', 'ellipsis-h']" style="color: #ffffff;float: right;"/>
-                    <br>
-                    <span style="font-size: x-large;"><b>₱100,000.00</b></span>
-                </div>
-                <div class="IncomeExpenses">
-                    <div class="incomeText">
-                        <span style="font-size: small;">Income</span>
-                        <br>
-                        <span style="font-size: large;"><b>₱500.00</b></span>
-                    </div>
-                    <div class="expenseText">
-                        <span style="font-size: small;">Expenses</span>
-                        <br>
-                        <span style="font-size: large;"><b>₱22,000.55</b></span>
-                    </div>
-                </div>
-            </div>
+            
             <NavMenu></NavMenu>
         </div>
+        
     </body>
   </div>
 </template>
