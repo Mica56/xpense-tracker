@@ -85,10 +85,21 @@
     },
     computed: {
       totalBalance () {
-        let sum = 0;
+        let debitSum = 0;
+        let creditSum = 0;
+
         this.rows.forEach ( (e) => {
-          sum += e['price-input']
+          if (e.transaction_type === 'Debit') {
+            debitSum += e['price-input']
+          }
         });
+        this.rows.forEach ( (e) => {
+          if (e.transaction_type === 'Credit') {
+            creditSum += e['price-input']
+          }
+        });
+
+        let sum = debitSum - creditSum
 
         return sum.toFixed(2)
       },
