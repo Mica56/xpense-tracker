@@ -20,10 +20,10 @@
         <div class="main-body">
           <img class="account-profile" src="../assets/images/profile.png">
           <div class="account-details">
-            <h2 class="account-name">Misty Williams</h2>
-            <span class="username">@mistywilliams96</span>
+            <h2 class="account-name">Anica Arastosa</h2>
+            <span class="username">@aniara</span>
             <div class="profile">
-              <p><span class="email">Email: </span>mistywilliams@gmail.com</p> 
+              <p><span class="email">Email: </span>anica_23@gmail.com</p> 
               <p><span class="number">Phone number: </span>09389140463 </p> 
               <p><span class="account-type">Account type: </span> Normal</p>
             </div>
