@@ -18,13 +18,13 @@
               <div class="add-transaction">
                 <form class="gform pure-form pure-form-stacked" method="POST" data-email="" @submit.prevent="createTransaction" action="https://script.google.com/macros/s/AKfycbwxUrtZCfje7pLaoUG_ENSe_w7N6K0XfYxry1Nsr0qcc-h49p2ZRslWkkukWlW8T_5u/exec">
                 <label>Name</label>
-                <input type="text" class="inputfield" placeholder="Enter name" id="input-name" name="input-name">
+                <input type="text" v-model="inputs.name" class="inputfield" placeholder="Enter name" id="input-name" name="input-name">
                 <label>Amount</label>
                 <div class="price-input">
-                    <input type="number" class="inputfield" id="price-input" name="price-input" placeholder="Enter price" min="0">
+                    <input type="number" v-model="inputs.amount"class="inputfield" id="price-input" name="price-input" placeholder="Enter price" min="0">
                 </div>
                 <label>Date</label>
-                <input type="date" class="inputfield" name="input-date" id="input-date">
+                <input type="date" v-model="inputs.dateInput"class="inputfield" name="input-date" id="input-date">
                 <label>Expense Type</label>
                 <div class="dropdown">
                     <!-- <div id="selectfield-expense">
@@ -79,7 +79,8 @@
         
                 </div>
                     <div style="text-decoration: none;color: inherit;">
-                        <input type="submit" class="buttone" value="SAVE">
+                        <input type="submit" class="buttone" value="SAVE" :disabled="isNotEmptyFields" 
+                        v-bind:class="isNotEmptyFields ? 'save-disabled' : 'buttone'">
                         <router-link to="/home" style="text-decoration: none;color: inherit;">
                           <input type="button" class="buttone" value="CANCEL">
                         </router-link>
@@ -104,6 +105,11 @@ export default {
     },
     data() {
     return {
+        inputs: {
+          name: '',
+          amount: 0,
+          dateInput: '',
+        },
         selected_ET: null,
         optionsExpense: [
             {"value": 'A', "name": "Gcash Cash In"},
@@ -120,6 +126,11 @@ export default {
             {"value": 2, "name": "Credit"},
         ],
     }
+    },
+    computed: {
+      isNotEmptyFields () {
+        return !Boolean(this.inputs.name && this.inputs.amount && this.inputs.dateInput && this.selected_ET && this.selected_TT)
+      }
     },
     methods: {
       storeExpType(selected_ET) {
@@ -262,6 +273,10 @@ export default {
     
     .fa-home {
     color: #549994;
+    }
+    .save-disabled {
+      background-color:#EBEBE4;
+      color: #000;
     }
 
     .fa-user {
