@@ -10,7 +10,7 @@
               <router-link to="/login" style="text-decoration: none;color: inherit;">
                 <span style="font-size: larger;float: right;"><font-awesome-icon :icon="['fas', 'sign-out-alt']" style="color: #ffffff;"/></span>
               </router-link>
-              <span style="font-size: small;">Hello User!</span><br>
+              <span style="font-size: small;">Hello {{ user['Full Name'] }} </span><br>
               <!--<span style="font-size: larger;"><b>Misty Williams</b></span> -->
             </div>
           </div>
@@ -53,7 +53,7 @@
                     </div>
                 </div>
             <!-- <div class=""></div> -->
-            <router-link to="/addtransact">
+            <router-link :to="{ name: 'AddTransaction', params: { userCreds: {...user} }}">
               <button class="newTransactionButton"><span class="plus">+</span></button>
             </router-link>
           </div>
@@ -76,18 +76,33 @@
     data () {
       return {
         rows: [],
+        user: {},
       }
     },
     mounted () {
+
+      this.user = this.$route.params.userCreds || {'Full Name': 'User','user_id':1}
+
       this.pullLatestData()
     },
     computed: {
       totalBalance () {
-        let sum = 0;
+        let debitSum = 0;
+        let creditSum = 0;
+
         this.rows.forEach ( (e) => {
-          sum += e['price-input']
+          if (e.transaction_type === 'Debit') {
+          debitSum += e['price-input']
+          }
         });
 
+        this.rows.forEach ( (e) => {
+          if (e.transaction_type === 'Credit') {
+            creditSum += e['price-input']
+          }
+        });
+
+        let sum = debitSum - creditSum
         return sum.toFixed(2)
       },
       totalCredit () {
@@ -113,7 +128,7 @@
     },
     methods: {
       async pullLatestData () {
-        axios.get('https://script.googleusercontent.com/macros/echo?user_content_key=x9TjYPnJBXtUIMepCpbAaXL_MZNoq8XoCrKN2UeodXzuTCh_omGNAYIBxERO1x1yqEvv7-rmZYCL6CXfO6CylpO_VfG8Lwtum5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnDqK8jVvBXp9fpjbyJP-wHDAwzk2lY8GtIG9xSFsYMcBRKZwNFLSXmEDt_icz4ystJVeNNTa_XY5uDfOU_W1phOUl5bkwRZ_jw&lib=M3Un0O6LJxLlY9N7wsRNDEi_nbiigEm_c')
+        axios.get('https://script.google.com/macros/s/AKfycbzRbIy6I2JLfQIzgjuDqQlR7udDlmiX3QkcR_XRcoblVsDzn1rAK0oGP7Fu6Mp9jlMv/exec?user_id='+this.user.user_id)
         .then((response) => {
           console.log(response)
           this.rows = response.data

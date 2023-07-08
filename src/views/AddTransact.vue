@@ -103,6 +103,9 @@ export default {
     components: {
         NavMenu,
     },
+    mounted () {
+      this.user = this.$route.params.userCreds || {'Full Name': 'User', 'user_id':1}
+    },
     data() {
     return {
         inputs: {
@@ -110,6 +113,7 @@ export default {
           amount: 0,
           dateInput: '',
         },
+        user: {},
         selected_ET: null,
         optionsExpense: [
             {"value": 'A', "name": "Gcash Cash In"},
@@ -180,6 +184,7 @@ export default {
           }
         });
 
+        formData['user_id'] = this.user.user_id
         // add form-specific values into the data
         formData.formDataNameOrder = JSON.stringify(fields);
         formData.formGoogleSheetName = 'transactions'; // default sheet name
@@ -199,10 +204,12 @@ export default {
         xhr.open('POST', url);
         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
+        const userData = this.user
         xhr.onreadystatechange = () => {
             if (xhr.readyState === 4 && xhr.status === 200) {
               // REDIRECT TO TRANSACTIONS LIST PAGE
-              this.$router.push({ path: '/home' })
+              console.log(userData)
+              this.$router.push({ path: '/home',params: {userCreds: {...userData}}})
 
             }
         };
