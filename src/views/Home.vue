@@ -38,7 +38,7 @@
                 <div class="List">
                 <b>Transaction History</b>
                 </div>
-                <div class="TransactionHistory">
+                <div class="transactionHistory">
                     <div class="Transaction" v-for="row in rows" :key="row.index" @click="redirectRead(row)">
                         <span style="display:inline-flex; align-items:center; gap:9px;">
                                 <img src="../assets/images/upwork-logo.png" alt="logo1">
