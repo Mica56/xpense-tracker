@@ -1,6 +1,6 @@
 <template>
   <body>
-    <div class="container">
+    <div class="transdetail-container">
         <div class="header">
             <div class="circle"></div>
             <div class="circle1"></div> 
@@ -23,38 +23,39 @@
                     <span style="font-size: medium;display:flex;justify-content: center;"><b>Transaction Details</b></span>
                     <!-- <font-awesome-icon :icon="['fas', 'chevron-up']" style="color: #000000;"/> -->
                 </p>
-                <div class="Status">
-                    <span class="alignleft">Status</span>
-                    <span class="alignright" style="color: #438883;"><b>Income/ Debit</b></span>
-                    <div style="clear: both;"></div>
+                <div class="TransactionInfo-Stack">
+                    <div class="Status">
+                        <span class="alignleft">Status</span>
+                        <span class="alignright" style="color: #438883;"><b>Income/ Debit</b></span>
+                        <div style="clear: both;"></div>
+                    </div>
+                    <div class="From">
+                        <span class="alignleft">Transaction Name</span>
+                        <span class="alignright">{{ transDetails['input-name'] }} </span>
+                        <div style="clear: both;"></div>
+                    </div>
+                    <div class="From">
+                        <span class="alignleft">Transaction Type</span>
+                        <span class="alignright">{{ transDetails['expense_type'] }} </span>
+                        <div style="clear: both;"></div>
+                    </div>
+                    <div class="Time">
+                        <span class="alignleft">Time</span>
+                        <span class="alignright">{{ detailTime }}</span>
+                        <div style="clear: both;"></div>
+                    </div>
+                    <div class="Date">
+                        <span class="alignleft">Date</span>
+                        <span class="alignright"> {{ detailDate }}</span>
+                        <div style="clear: both;"></div>
+                    </div>
+                    <hr style="width:350px">
+                    <div class="Earnings">
+                        <span class="alignleft">Earnings</span>
+                        <span class="alignright"><b>₱ {{ transDetails['price-input'] }} </b></span>
+                        <div style="clear: both;"></div>
+                    </div>
                 </div>
-                <div class="From">
-                    <span class="alignleft">Transaction Name</span>
-                    <span class="alignright">{{ transDetails['input-name'] }} </span>
-                    <div style="clear: both;"></div>
-                </div>
-                <div class="From">
-                    <span class="alignleft">Transaction Type</span>
-                    <span class="alignright">{{ transDetails['expense_type'] }} </span>
-                    <div style="clear: both;"></div>
-                </div>
-                <div class="Time">
-                    <span class="alignleft">Time</span>
-                    <span class="alignright">{{ detailTime }}</span>
-                    <div style="clear: both;"></div>
-                </div>
-                <div class="Date">
-                    <span class="alignleft">Date</span>
-                    <span class="alignright"> {{ detailDate }}</span>
-                    <div style="clear: both;"></div>
-                </div>
-                <hr style="width:350px">
-                <div class="Earnings">
-                    <span class="alignleft">Earnings</span>
-                    <span class="alignright"><b>₱ {{ transDetails['price-input'] }} </b></span>
-                    <div style="clear: both;"></div>
-                </div>
-                <!-- {{transDetails}} -->
             </div>
         </div>
         <NavMenu></NavMenu>
@@ -99,6 +100,26 @@ export default {
     
 }
 </script>
+
+<style>
+.TransactionInfo-Stack {
+  text-align: center;
+  padding: 0 35px;
+  margin-bottom: 30px;
+  transform: translate(0%, 10%);
+}
+
+  .transdetail-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+  }
+</style>
 
 <style scoped>
 .header {

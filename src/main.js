@@ -32,16 +32,16 @@ Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 
-new Vue({
-  router,
-  render: h => h(App)
-}).$mount('#app');
+// new Vue({
+//   router,
+//   render: h => h(App)
+// }).$mount('#app');
 
-/*new Vue({
+new Vue({
   el: '#app',
   router,
   components: { App },
   template: '<App/>'
-})*/
+})
 
 

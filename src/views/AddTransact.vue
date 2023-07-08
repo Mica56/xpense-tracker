@@ -21,30 +21,12 @@
                 <input type="text" class="inputfield" placeholder="Enter name" id="input-name" name="input-name">
                 <label>Amount</label>
                 <div class="price-input">
-                    <input type="number" class="inputfield" id="price-input" name="price-input" placeholder="Enter price" min="0">
+                    <input type="number" class="inputfield" id="price-input" name="price-input" placeholder="Enter price" min="0" required>
                 </div>
                 <label>Date</label>
                 <input type="date" class="inputfield" name="input-date" id="input-date">
                 <label>Expense Type</label>
                 <div class="dropdown">
-                    <!-- <div id="selectfield-expense">
-                        <p id="selecttext-expense">Select Expense Type</p>
-                        <font-awesome-icon :icon="['fas', 'chevron-down']" size="xs"/>
-                    </div>
-                    <ul id="list-expense" class="hide1">
-                        <li class="options-expense">
-                            Food
-                        </li>
-                        <li class="options-expense">
-                            Transfer Payments
-                        </li>
-                        <li class="options-expense">
-                            Travel Expenses
-                        </li>
-                        <li class="options-expense">
-                            Load Transaction
-                        </li>
-                    </ul> -->
                     <select id="selectfield-expense" v-model="selected_ET" @input="storeExpType(selected_ET)" name="expense_type">
                         <option value="" id="selecttext-expense" disabled selected>Select Expense Type</option>
                         
@@ -56,19 +38,6 @@
 
                 <label>Transaction Type</label>
                 <div class="dropdown">
-                    <!-- <div id="selectfield-transaction">
-                    <p id="selecttext-transaction">Select Transaction Type</p>
-                    <font-awesome-icon :icon="['fas', 'chevron-down']" size="xs"/>
-                    </div>
-                    <ul id="list-transaction" class="hide2">
-                    <li class="options-transaction">
-                        Debit
-                    </li>
-                    <li class="options-transaction">
-                        Credit
-                    </li>
-                    </ul> -->
-                    
                     <select id="selectfield-transaction" v-model="selected_TT" @input="storeTransType(selected_TT)" name="transaction_type">
                         <option value="" id="selecttext-transaction" disabled selected>Select Expense Type</option>
                         <option id="list-transaction" v-for="option in optionsTransact" :key="option.value">
@@ -203,23 +172,6 @@ export default {
         xhr.send(encoded);
       },
     },
-    // var selectField = document.getElementById("selectfield");
-    // var selectText = document.getElementById("selecttext");
-    // var options = document.getElementsByClassName("options");
-    // var list = document.getElementById("list");
-
-    // selectField.onclick = function () {
-    // list.classList.toggle("hide");
-    // }
-
-    // for (option of options) {
-    // option.onclick = function () {
-    //     var imageElement = document.createElement("img");
-    //     selectText.innerHTML = "";
-    //     selectText.innerHTML += this.innerHTML;
-    //     list.classList.toggle("hide");
-    // };
-    // }
 };
 
 </script>
